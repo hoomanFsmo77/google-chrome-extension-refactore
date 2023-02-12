@@ -197,8 +197,12 @@ module.exports={
         '*':{
           fontFamily:'theme(fontFamily.main)'
         },
-        'body':{
-          overflowX:'hidden'
+        '#app':{
+          overflowX:'hidden',
+          width:'370px',
+          height:'596px',
+          display:'flex',
+          flexDirection:'column'
         },
         'h1,h2,h3,h4,h5,h6':{
           lineHeight:'1.5',
