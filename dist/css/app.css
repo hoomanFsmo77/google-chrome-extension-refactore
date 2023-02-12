@@ -503,10 +503,78 @@ p, span, a {
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/assets/styles/Tailwind.config/Tailwind.utilities.scss ***!
   \**********************************************************************************************************************************************************************************************/
+.text-1 {
+  font-size: 1rem;
+}
 
+.text-1\.1 {
+  font-size: 1.1rem;
+}
+
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128/var(--tw-text-opacity));
+}
+
+.text-gray-700 {
+  --tw-text-opacity: 1;
+  color: rgb(55 65 81/var(--tw-text-opacity));
+}
 /*!***************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/assets/styles/App.scss ***!
   \***************************************************************************************************************************************************************/
+.nav {
+  margin-top: auto;
+  width: 100%;
+}
 
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container a {
+  display: block;
+}
+
+.nav-container li {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+
+.navbar-link-active {
+  --tw-text-opacity: 1 !important;
+  color: rgb(41 171 225/var(--tw-text-opacity)) !important;
+}
+
+.navbar-link-active span {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navbar-link-active svg {
+  --tw-text-opacity: 1 !important;
+  color: rgb(41 171 225/var(--tw-text-opacity)) !important;
+}
+
+.nav-tracer {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 3px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 171 225/var(--tw-bg-opacity));
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
 
 /*# sourceMappingURL=app.css.map*/

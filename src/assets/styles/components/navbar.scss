@@ -1,0 +1,15 @@
+@tailwind components;
+@layer components {
+  .nav{
+    @apply  mt-auto w-full;
+  }
+  .nav-container{
+    @apply flex justify-between items-center [&_li]:text-center [&_li]:p-1 [&_li]:w-full [&_a]:block [&_li]:relative;
+  }
+  .navbar-link-active{
+    @apply !text-primary [&_svg]:!text-primary [&_span]:opacity-100 [&_span]:visible;
+  }
+  .nav-tracer{
+    @apply absolute block w-full opacity-0 invisible h-[3px] bg-primary left-0 transition-all ease-out bottom-0
+  }
+}

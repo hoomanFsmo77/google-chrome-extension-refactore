@@ -6,6 +6,7 @@ module.exports={
     "./src/*.vue",
     "./src/components/**/*.{js,vue,ts}",
     "./src/composables/**/*.{js,vue,ts}",
+    "./src/layouts/**/*.{js,vue,ts}",
     "./src/pages/**/*.vue",
     "./src/store/**/*.{js,ts}",
   ],
@@ -186,7 +187,7 @@ module.exports={
 
     extend:{
       colors:{
-        dark:'#1c181f',
+        primary:'#29abe1',
         light:'#fff'
       }
     }
