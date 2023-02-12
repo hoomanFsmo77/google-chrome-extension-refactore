@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path=require('path')
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -5,10 +6,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
 module.exports={
-    entry: "./src/App.ts",
+    entry: {
+        "app":"./src/App.ts",
+        "background":"./src/background.ts"
+    },
     output: {
-        path: path.resolve(__dirname,"./dist"),
-        filename: "[name].[contenthash].js",
+        path: path.resolve(__dirname,'./dist'),
+        filename: "[name].js",
         assetModuleFilename: "assets/[name][ext]"
     },
     mode: "production",
@@ -28,8 +32,8 @@ module.exports={
                 ],
             },
             {
-                test: /\.(png|svg|jpe?g)/,
-                type: 'asset/resource'
+                test: /\.(png|svg|jpe?g|json)/,
+                type: 'asset/resource',
             },
             {
                 test: /\.(eot|ttf|woff|woff2)/,
@@ -49,10 +53,11 @@ module.exports={
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: 'ts-loader',
-		options: { appendTsSuffixTo: [/\.vue$/] }
+                options: { appendTsSuffixTo: [/\.vue$/] }
             }
         ],
     },
+
     resolve: {
         extensions: ['.tsx', '.ts', '.js'],
     },
@@ -61,6 +66,12 @@ module.exports={
         minimizer: [new TerserPlugin()],
     },
     plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "./src/public", to: "public" },
+                { from: "./src/static", to: "./" },
+            ],
+        }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename:"css/[name].css"

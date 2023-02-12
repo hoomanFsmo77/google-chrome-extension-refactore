@@ -3,12 +3,17 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
 module.exports={
     devtool:'source-map',
-    entry: "./src/App.ts",
+    entry: {
+        "app":"./src/App.ts",
+        "background":"./src/background.ts"
+    },
     output: {
         path: path.resolve(__dirname,'./dist'),
-        filename: "[name].[contenthash].js",
+        filename: "[name].js",
         assetModuleFilename: "assets/[name][ext]"
     },
     mode: "development",
@@ -28,8 +33,8 @@ module.exports={
                 ],
             },
             {
-                test: /\.(png|svg|jpe?g)/,
-                type: 'asset/resource'
+                test: /\.(png|svg|jpe?g|json)/,
+                type: 'asset/resource',
             },
             {
                 test: /\.(eot|ttf|woff|woff2)/,
@@ -49,7 +54,7 @@ module.exports={
                 test: /\.ts$/,
                 exclude: /node_modules/,
                 loader: 'ts-loader',
-		options: { appendTsSuffixTo: [/\.vue$/] }
+		  options: { appendTsSuffixTo: [/\.vue$/] }
             }
         ],
     },
@@ -57,6 +62,12 @@ module.exports={
         extensions: ['.tsx', '.ts', '.js','.vue'],
     },
     plugins: [
+        new CopyWebpackPlugin({
+            patterns: [
+                { from: "./src/public", to: "public" },
+                { from: "./src/static", to: "./" },
+            ],
+        }),
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
             filename:"css/[name].css"
