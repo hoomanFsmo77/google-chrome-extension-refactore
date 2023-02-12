@@ -9,6 +9,7 @@
     "preserveConstEnums": true,
      "moduleResolution": "Node",
     "sourceMap": true,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": ["./webpack.dev.config.ts","./webpack.prod.config.ts"]
 }
