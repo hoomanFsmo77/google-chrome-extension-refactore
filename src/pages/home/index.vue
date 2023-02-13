@@ -1,11 +1,14 @@
 <template>
-  home index
+  <Header/>
+  <Intro/>
+  <Tab/>
+  <router-view></router-view>
 </template>
 
-<script>
-export default {
-  name: "index"
-}
+<script setup lang="ts">
+import Header from '../../components/Home/Header.vue'
+import Intro from '../../components/Home/Intro.vue'
+import Tab from '../../components/Home/Tab.vue'
 </script>
 
 <style scoped>

@@ -503,6 +503,30 @@ p, span, a {
 /*!**********************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/assets/styles/Tailwind.config/Tailwind.utilities.scss ***!
   \**********************************************************************************************************************************************************************************************/
+.mt-0 {
+  margin-top: 0;
+}
+
+.mt-0\.5 {
+  margin-top: 0.5rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-0 {
+  font-size: 0;
+}
+
+.text-0\.9 {
+  font-size: 0.9rem;
+}
+
 .text-1 {
   font-size: 1rem;
 }
@@ -511,18 +535,58 @@ p, span, a {
   font-size: 1.1rem;
 }
 
-.text-gray-500 {
+.text-1\.2 {
+  font-size: 1.2rem;
+}
+
+.text-dark {
   --tw-text-opacity: 1;
-  color: rgb(107 114 128/var(--tw-text-opacity));
+  color: rgb(51 51 51/var(--tw-text-opacity));
+}
+
+.text-gray-600 {
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99/var(--tw-text-opacity));
 }
 
 .text-gray-700 {
   --tw-text-opacity: 1;
   color: rgb(55 65 81/var(--tw-text-opacity));
 }
+
+.text-light {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(41 171 225/var(--tw-text-opacity));
+}
+
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-500 {
+  transition-duration: 500ms;
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .group-hover\:scale-\[1\.1\] {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
 /*!***************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./src/assets/styles/App.scss ***!
   \***************************************************************************************************************************************************************/
+@tailwind components;
 .nav {
   margin-top: auto;
   width: 100%;
@@ -575,6 +639,128 @@ p, span, a {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-right: 1.5rem;
+  padding-left: 1rem;
+}
+
+#intro {
+  position: relative;
+  height: 150px;
+  overflow: hidden;
+}
+
+.intro-image {
+  height: 100%;
+  cursor: pointer;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../assets/news-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: center;
+}
+
+.tab-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.tab-container a {
+  position: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem;
+}
+
+.tab-container li {
+  width: 100%;
+}
+
+.tab-item {
+  cursor: pointer;
+}
+
+.tab-item p {
+  margin-left: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(75 85 99/var(--tw-text-opacity));
+}
+
+.tab-tracer {
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 3px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 171 225/var(--tw-bg-opacity));
+  opacity: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.tab-item-active p {
+  --tw-text-opacity: 1 !important;
+  color: rgb(51 51 51/var(--tw-text-opacity)) !important;
+}
+
+.tab-item-active span {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.tab-item-active svg {
+  --tw-text-opacity: 1 !important;
+  color: rgb(51 51 51/var(--tw-text-opacity)) !important;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 171 225/var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255/var(--tw-text-opacity));
+}
+
+.btn-primary:hover {
+  --tw-shadow: 0 0 20px;
+  --tw-shadow-colored: 0 0 20px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  --tw-shadow-color: #29abe1;
+  --tw-shadow: var(--tw-shadow-colored) ;
 }
 
 /*# sourceMappingURL=app.css.map*/

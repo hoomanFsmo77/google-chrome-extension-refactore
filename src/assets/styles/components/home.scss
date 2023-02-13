@@ -1,0 +1,25 @@
+@tailwind components;
+
+@layer components {
+  #intro{
+    @apply h-[150px] overflow-hidden relative
+  }
+  .intro-image{
+    @apply bg-[linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('../../assets/images/news-bg.jpg')] bg-center h-full bg-no-repeat bg-cover cursor-pointer;
+  }
+  .intro-overlay{
+    @apply absolute w-full h-full top-0 left-0 cursor-pointer p-1 text-center
+  }
+  .tab-container{
+    @apply flex justify-between items-center [&_li]:w-full [&_a]:w-full [&_a]:p-0.7 [&_a]:flex [&_a]:items-center [&_a]:justify-center [&_a]:relative
+  }
+  .tab-item{
+   @apply [&_p]:ml-0.5 [&_p]:text-gray-600 cursor-pointer
+  }
+  .tab-tracer{
+    @apply absolute block w-full opacity-0 invisible h-[3px] bg-primary left-0 transition-all ease-out bottom-0
+  }
+  .tab-item-active{
+    @apply [&_span]:!opacity-100 [&_span]:!visible [&_p]:!text-dark [&_svg]:!text-dark;
+  }
+}

@@ -13004,14 +13004,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 /* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./App.vue */ "./src/App.vue");
 /* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
-/* harmony import */ var _router_config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./router.config */ "./src/router.config.ts");
+/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./router */ "./src/router.ts");
 
 
 
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHouse, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faMagnifyingGlass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUser);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHouse, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faMagnifyingGlass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faX, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faStar, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHeart);
 
 
 
@@ -13019,15 +13019,15 @@ _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fort
 var app = (0,vue__WEBPACK_IMPORTED_MODULE_6__.createApp)(_App_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
 app.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon);
 app.use((0,pinia__WEBPACK_IMPORTED_MODULE_9__.createPinia)());
-app.use(_router_config__WEBPACK_IMPORTED_MODULE_8__["default"]);
+app.use(_router__WEBPACK_IMPORTED_MODULE_8__["default"]);
 app.mount('#app');
 
 /***/ }),
 
-/***/ "./src/router.config.ts":
-/*!******************************!*\
-  !*** ./src/router.config.ts ***!
-  \******************************/
+/***/ "./src/router.ts":
+/*!***********************!*\
+  !*** ./src/router.ts ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -13043,12 +13043,31 @@ var routes = [{
   component: function component() {
     return __webpack_require__.e(/*! import() */ "src_pages_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/index.vue */ "./src/pages/index.vue"));
   },
+  redirect: {
+    name: 'index-home'
+  },
   children: [{
-    path: '',
+    path: '/home',
     name: 'index-home',
     component: function component() {
       return __webpack_require__.e(/*! import() */ "src_pages_home_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/index.vue */ "./src/pages/home/index.vue"));
-    }
+    },
+    redirect: {
+      name: 'index-home-popular'
+    },
+    children: [{
+      path: '/popular',
+      name: 'index-home-popular',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ "src_pages_home_popular_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/popular.vue */ "./src/pages/home/popular.vue"));
+      }
+    }, {
+      path: '/following',
+      name: 'index-home-following',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ "src_pages_home_following_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/following.vue */ "./src/pages/home/following.vue"));
+      }
+    }]
   }, {
     path: '/user',
     name: 'index-user',
@@ -13202,7 +13221,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_font_awesome_icon = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("font-awesome-icon");
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    "exact-active-class": "navbar-link-active",
+    "active-class": "navbar-link-active",
     to: {
       name: 'index-home'
     }
@@ -13215,7 +13234,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1 /* STABLE */
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    "exact-active-class": "navbar-link-active",
+    "active-class": "navbar-link-active",
     to: {
       name: 'index-search'
     }
@@ -13228,7 +13247,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     _: 1 /* STABLE */
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
-    "exact-active-class": "navbar-link-active",
+    "active-class": "navbar-link-active",
     to: {
       name: 'index-user'
     }
@@ -14338,7 +14357,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676223946549
+      // 1676311374004
       var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14358,7 +14377,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676223946172
+      // 1676311373744
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14378,7 +14397,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676223946163
+      // 1676311373749
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14398,7 +14417,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676223946181
+      // 1676311373759
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -37484,7 +37503,7 @@ function useRoute() {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("5afb2eae07fd5e714386")
+/******/ 		__webpack_require__.h = () => ("cebd285da7c521df371b")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

@@ -6,11 +6,29 @@ const routes:RouteRecordRaw[]=[
         path:'',
         name:'index',
         component:()=>import('./pages/index.vue'),
+        redirect:{
+          name:'index-home'
+        },
         children:[
             {
-                path:'',
+                path:'/home',
                 name:'index-home',
-                component:()=>import('./pages/home/index.vue')
+                component:()=>import('./pages/home/index.vue'),
+                redirect:{
+                    name:'index-home-popular'
+                },
+                children:[
+                    {
+                        path:'/popular',
+                        name:'index-home-popular',
+                        component:()=>import('./pages/home/popular.vue')
+                    },
+                    {
+                        path:'/following',
+                        name:'index-home-following',
+                        component:()=>import('./pages/home/following.vue')
+                    },
+                ]
             },
             {
                 path:'/user',
