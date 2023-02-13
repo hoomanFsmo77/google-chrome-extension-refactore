@@ -22,4 +22,7 @@
   .tab-item-active{
     @apply [&_span]:!opacity-100 [&_span]:!visible [&_p]:!text-dark [&_svg]:!text-dark;
   }
+  #popular{
+    @apply p-1.5 h-[300px] overflow-y-scroll relative
+  }
 }

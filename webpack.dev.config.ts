@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
+
 
 module.exports={
     devtool:'source-map',
@@ -62,6 +64,7 @@ module.exports={
         extensions: ['.tsx', '.ts', '.js','.vue'],
     },
     plugins: [
+        new Dotenv(),
         new CopyWebpackPlugin({
             patterns: [
                 { from: "./src/public", to: "public" },

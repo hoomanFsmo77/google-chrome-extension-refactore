@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader')
+const Dotenv = require('dotenv-webpack');
 module.exports={
     entry: {
         "app":"./src/App.ts",
@@ -66,6 +67,7 @@ module.exports={
         minimizer: [new TerserPlugin()],
     },
     plugins: [
+        new Dotenv(),
         new CopyWebpackPlugin({
             patterns: [
                 { from: "./src/public", to: "public" },
