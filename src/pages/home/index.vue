@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import Header from '../../components/Home/Header.vue'
-import Intro from '../../components/Home/Intro.vue'
-import Tab from '../../components/Home/Tab.vue'
+import Header from 'src/components/Home/Header.vue'
+import Intro from 'src/components/Home/Intro.vue'
+import Tab from 'src/components/Home/Tab.vue'
 </script>
 
 <style scoped>

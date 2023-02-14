@@ -14,14 +14,14 @@ library.add(faHouse,faMagnifyingGlass,faUser,faX,faStar,faHeart,faArrowUpLong,fa
 
 //// App
 import {createApp} from "vue";
-import App from "./App.vue";
+import App from "src/App.vue";
 
 
 //// pinia
 import {createPinia} from "pinia";
 
 //// router
-import router from "./router";
+import router from "src/router";
 
 
 

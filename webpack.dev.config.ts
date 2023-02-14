@@ -62,13 +62,15 @@ module.exports={
     },
     resolve: {
         extensions: ['.tsx', '.ts', '.js','.vue'],
+        alias: {
+            'src': path.resolve(__dirname, 'src'),
+        }
     },
     plugins: [
         new Dotenv(),
         new CopyWebpackPlugin({
             patterns: [
-                { from: "./src/public", to: "public" },
-                { from: "./src/static", to: "./" },
+                { from: "./src/public", to: "./" },
             ],
         }),
         new VueLoaderPlugin(),

@@ -1,12 +1,12 @@
 <template>
   <header class="home-header">
-    <img src="/public/logo_32.png" alt="">
+    <img src="/images/logo_32.png" alt="">
     <CBtn/>
   </header>
 </template>
 
 <script setup lang="ts">
-import CBtn from '../../components/CBtn.vue'
+import CBtn from 'src/components/CBtn.vue'
 
 </script>
 

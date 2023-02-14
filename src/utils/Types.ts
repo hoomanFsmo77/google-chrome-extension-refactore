@@ -12,3 +12,8 @@ export interface Popular_Store {
     coinList:Popular_List[],
     fetchFlag:boolean
 }
+
+
+export interface User_Store {
+    loginStatus:boolean
+}

@@ -1,7 +1,7 @@
 import {defineStore} from "pinia";
-import {Popular_Store,Popular_List} from "../composables/useTypes";
+import {Popular_Store,Popular_List} from "src/utils/Types";
 import {ofetch} from "ofetch";
-import {favCoins} from "../composables/useHelper";
+import {favCoins} from "src/utils/Helper";
 
 
 export const usePopularCoinStore=defineStore('popular',{

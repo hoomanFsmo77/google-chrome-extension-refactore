@@ -1,6 +1,6 @@
-import {usePopularCoinStore} from "../store/popular";
+import {usePopularCoinStore} from "src/store/popular";
 import {computed,onMounted} from "vue";
-import {Popular_List} from "./useTypes";
+import {Popular_List} from "src/utils/Types";
 
 export const usePopular=()=>{
     const popularStore=usePopularCoinStore()

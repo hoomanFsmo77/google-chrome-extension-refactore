@@ -1,10 +1,13 @@
 @tailwind components;
 @layer components {
   .btn{
-    @apply p-0.6 transition-all text-1 rounded-6 inline-block
+    @apply p-0.6 transition-all text-1 rounded-6 inline-block hover:shadow-[0_0_20px]
   }
   .btn-primary{
-    @apply bg-primary text-white hover:shadow-primary hover:shadow-[0_0_20px]
+    @apply bg-primary text-light hover:shadow-primary
+  }
+  .btn-warning{
+    @apply bg-amber-500 text-light hover:shadow-amber-500
   }
 
 }

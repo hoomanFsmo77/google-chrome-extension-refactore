@@ -7,7 +7,7 @@
 ///// style
 import './assets/styles/App.scss';
 ///// components
-import Navbar from './components/layout/Navbar.vue'
+import Navbar from 'src/components/layout/Navbar.vue'
 
 
 </script>

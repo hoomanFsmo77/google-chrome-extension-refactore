@@ -9,7 +9,19 @@
     "preserveConstEnums": true,
      "moduleResolution": "Node",
     "sourceMap": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "types": [
+      "node"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "src": [
+        "src"
+      ]
+    }
   },
-  "exclude": ["./webpack.dev.config.ts","./webpack.prod.config.ts"]
+  "include": ["./src/**/*"],
+  "exclude": ["./webpack.dev.config.ts","./webpack.prod.config.ts"],
+
 }

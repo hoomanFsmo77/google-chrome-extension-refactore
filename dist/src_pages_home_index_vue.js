@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
-/* harmony import */ var _components_CBtn_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/CBtn.vue */ "./src/components/CBtn.vue");
+/* harmony import */ var src_components_CBtn_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/components/CBtn.vue */ "./src/components/CBtn.vue");
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
@@ -54,7 +54,7 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _a.expose;
     expose();
     var __returned__ = {
-      CBtn: _components_CBtn_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+      CBtn: src_components_CBtn_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -77,9 +77,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
-/* harmony import */ var _components_Home_Header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Home/Header.vue */ "./src/components/Home/Header.vue");
-/* harmony import */ var _components_Home_Intro_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Home/Intro.vue */ "./src/components/Home/Intro.vue");
-/* harmony import */ var _components_Home_Tab_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/Home/Tab.vue */ "./src/components/Home/Tab.vue");
+/* harmony import */ var src_components_Home_Header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/components/Home/Header.vue */ "./src/components/Home/Header.vue");
+/* harmony import */ var src_components_Home_Intro_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/components/Home/Intro.vue */ "./src/components/Home/Intro.vue");
+/* harmony import */ var src_components_Home_Tab_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/components/Home/Tab.vue */ "./src/components/Home/Tab.vue");
 
 
 
@@ -90,9 +90,9 @@ __webpack_require__.r(__webpack_exports__);
     var expose = _a.expose;
     expose();
     var __returned__ = {
-      Header: _components_Home_Header_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-      Intro: _components_Home_Intro_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-      Tab: _components_Home_Tab_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+      Header: src_components_Home_Header_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+      Intro: src_components_Home_Intro_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+      Tab: src_components_Home_Tab_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -143,7 +143,7 @@ var _hoisted_1 = {
   "class": "home-header"
 };
 var _hoisted_2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("img", {
-  src: "/public/logo_32.png",
+  src: "/images/logo_32.png",
   alt: ""
 }, null, -1);
 function render(_ctx, _cache, $props, $setup, $data, $options) {
