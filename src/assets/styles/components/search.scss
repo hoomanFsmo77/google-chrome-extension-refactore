@@ -1,0 +1,13 @@
+@tailwind components;
+@layer components {
+  .search-result{
+    @apply absolute w-full top-[57px] overflow-y-auto min-h-[3rem] max-h-[9rem] bg-light shadow-[0_17px_27px_rgba(0,0,0,0.1)]
+  }
+  #trending-list{
+    @apply p-1 bg-gray-100/70 h-full overflow-y-auto;
+  }
+  .trending-card{
+    @apply flex justify-center flex-col items-center p-0.6 border-[1px] border-gray-300 rounded-6 bg-light cursor-pointer transition-all hover:shadow-[0_0_30px_rgba(0,0,0,0.1)]
+  }
+
+}

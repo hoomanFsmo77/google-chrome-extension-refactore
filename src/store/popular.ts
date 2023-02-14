@@ -28,6 +28,11 @@ export const usePopularCoinStore=defineStore('popular',{
                 })
             })
             return result;
+        },
+        getBitCoinPrice(state):number|undefined{
+            if(state.fetchFlag){
+                return  state.coinList.filter(item=>item.id==='bitcoin')[0].current_price
+            }
         }
     },
     actions:{

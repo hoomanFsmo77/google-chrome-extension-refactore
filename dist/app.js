@@ -13059,13 +13059,13 @@ var routes = [{
       path: '/popular',
       name: 'index-home-popular',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_epic-spinners_dist_es_components_HollowDotsSpinner_js-node_modules_ofetc-709c1d"), __webpack_require__.e("src_pages_home_popular_vue-node_modules_epic-spinners_dist_style_HollowDotsSpinner_css")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/popular.vue */ "./src/pages/home/popular.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_home_popular_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/popular.vue */ "./src/pages/home/popular.vue"));
       }
     }, {
       path: '/following',
       name: 'index-home-following',
       component: function component() {
-        return __webpack_require__.e(/*! import() */ "src_pages_home_following_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/following.vue */ "./src/pages/home/following.vue"));
+        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_home_following_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/following.vue */ "./src/pages/home/following.vue"));
       }
     }]
   }, {
@@ -13079,7 +13079,20 @@ var routes = [{
     name: 'index-search',
     component: function component() {
       return __webpack_require__.e(/*! import() */ "src_pages_search_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/search/index.vue */ "./src/pages/search/index.vue"));
-    }
+    },
+    children: [{
+      name: 'index-search-trending',
+      path: '/trending',
+      component: function component() {
+        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_search_Trending_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! src/pages/search/Trending.vue */ "./src/pages/search/Trending.vue"));
+      }
+    }, {
+      name: 'index-search-detail',
+      path: '/detail',
+      component: function component() {
+        return __webpack_require__.e(/*! import() */ "src_pages_search_Detail_vue").then(__webpack_require__.bind(__webpack_require__, /*! src/pages/search/Detail.vue */ "./src/pages/search/Detail.vue"));
+      }
+    }]
   }]
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
@@ -13195,7 +13208,7 @@ function render(_ctx, _cache) {
   })]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     "active-class": "navbar-link-active",
     to: {
-      name: 'index-search'
+      name: 'index-search-trending'
     }
   }, {
     "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
@@ -14316,7 +14329,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676384165536
+      // 1676397547288
       var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14336,7 +14349,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676384165083
+      // 1676397546190
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14356,7 +14369,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676384165058
+      // 1676397546174
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14376,7 +14389,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676384165068
+      // 1676397546183
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -37444,7 +37457,7 @@ function useRoute() {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("7aaba9131798249173fa")
+/******/ 		__webpack_require__.h = () => ("b70481961de77e8b21b8")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
@@ -37992,7 +38005,7 @@ function useRoute() {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"src_pages_home_popular_vue-node_modules_epic-spinners_dist_style_HollowDotsSpinner_css":1};
+/******/ 			var cssChunks = {"src_pages_home_popular_vue":1,"src_pages_search_Trending_vue":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {

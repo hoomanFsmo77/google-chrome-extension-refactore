@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunktemplate"] = self["webpackChunktemplate"] || []).push([["src_pages_home_popular_vue-node_modules_epic-spinners_dist_style_HollowDotsSpinner_css"],{
+(self["webpackChunktemplate"] = self["webpackChunktemplate"] || []).push([["src_pages_home_popular_vue"],{
 
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[10].use[0]!./src/components/Home/PriceCard.vue?vue&type=script&setup=true&lang=ts":
 /*!********************************************************************************************************************************************************************************************************************************************************************!*\
@@ -115,7 +115,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 /* harmony import */ var src_components_Home_PriceCard_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/components/Home/PriceCard.vue */ "./src/components/Home/PriceCard.vue");
-/* harmony import */ var src_composables_usePopular__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/composables/usePopular */ "./src/composables/usePopular.ts");
+/* harmony import */ var src_composables_useHome__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/composables/useHome */ "./src/composables/useHome.ts");
 /* harmony import */ var src_components_PLoader_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/components/PLoader.vue */ "./src/components/PLoader.vue");
 
 
@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _a) {
     var expose = _a.expose;
     expose();
-    var _b = (0,src_composables_usePopular__WEBPACK_IMPORTED_MODULE_2__.usePopular)(),
+    var _b = (0,src_composables_useHome__WEBPACK_IMPORTED_MODULE_2__.useHome)(),
       popularCoinLists = _b.popularCoinLists,
       fetchFlag = _b.fetchFlag;
     var __returned__ = {
@@ -260,29 +260,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
-/***/ "./src/composables/usePopular.ts":
-/*!***************************************!*\
-  !*** ./src/composables/usePopular.ts ***!
-  \***************************************/
+/***/ "./src/composables/useHome.ts":
+/*!************************************!*\
+  !*** ./src/composables/useHome.ts ***!
+  \************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "usePopular": () => (/* binding */ usePopular)
+/* harmony export */   "useHome": () => (/* binding */ useHome)
 /* harmony export */ });
-/* harmony import */ var src_store_popular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/store/popular */ "./src/store/popular.ts");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
+/* harmony import */ var _index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index */ "./src/composables/index.ts");
 
 
-var usePopular = function usePopular() {
-  var popularStore = (0,src_store_popular__WEBPACK_IMPORTED_MODULE_0__.usePopularCoinStore)();
-  var popularCoinLists = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
-    return popularStore.getCoinList;
-  });
-  var fetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
-    return popularStore.getFetchFlag;
-  });
-  (0,vue__WEBPACK_IMPORTED_MODULE_1__.onMounted)(function () {
+var useHome = function useHome() {
+  var _a = (0,_index__WEBPACK_IMPORTED_MODULE_1__.usePopularIndex)(),
+    popularCoinLists = _a.popularCoinLists,
+    popularStore = _a.popularStore,
+    fetchFlag = _a.fetchFlag;
+  (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
     popularStore.setCoinList();
   });
   return {
@@ -293,212 +290,22 @@ var usePopular = function usePopular() {
 
 /***/ }),
 
-/***/ "./src/store/popular.ts":
-/*!******************************!*\
-  !*** ./src/store/popular.ts ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ "./node_modules/epic-spinners/dist/style/HollowDotsSpinner.css":
+/*!*********************************************************************!*\
+  !*** ./node_modules/epic-spinners/dist/style/HollowDotsSpinner.css ***!
+  \*********************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "usePopularCoinStore": () => (/* binding */ usePopularCoinStore)
-/* harmony export */ });
-/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
-/* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
-/* harmony import */ var src_utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/utils/Helper */ "./src/utils/Helper.ts");
-var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
-  function adopt(value) {
-    return value instanceof P ? value : new P(function (resolve) {
-      resolve(value);
-    });
-  }
-  return new (P || (P = Promise))(function (resolve, reject) {
-    function fulfilled(value) {
-      try {
-        step(generator.next(value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function rejected(value) {
-      try {
-        step(generator["throw"](value));
-      } catch (e) {
-        reject(e);
-      }
-    }
-    function step(result) {
-      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-    }
-    step((generator = generator.apply(thisArg, _arguments || [])).next());
-  });
-};
-var __generator = undefined && undefined.__generator || function (thisArg, body) {
-  var _ = {
-      label: 0,
-      sent: function sent() {
-        if (t[0] & 1) throw t[1];
-        return t[1];
-      },
-      trys: [],
-      ops: []
-    },
-    f,
-    y,
-    t,
-    g;
-  return g = {
-    next: verb(0),
-    "throw": verb(1),
-    "return": verb(2)
-  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
-    return this;
-  }), g;
-  function verb(n) {
-    return function (v) {
-      return step([n, v]);
-    };
-  }
-  function step(op) {
-    if (f) throw new TypeError("Generator is already executing.");
-    while (g && (g = 0, op[0] && (_ = 0)), _) {
-      try {
-        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-        if (y = 0, t) op = [op[0] & 2, t.value];
-        switch (op[0]) {
-          case 0:
-          case 1:
-            t = op;
-            break;
-          case 4:
-            _.label++;
-            return {
-              value: op[1],
-              done: false
-            };
-          case 5:
-            _.label++;
-            y = op[1];
-            op = [0];
-            continue;
-          case 7:
-            op = _.ops.pop();
-            _.trys.pop();
-            continue;
-          default:
-            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
-              _ = 0;
-              continue;
-            }
-            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
-              _.label = op[1];
-              break;
-            }
-            if (op[0] === 6 && _.label < t[1]) {
-              _.label = t[1];
-              t = op;
-              break;
-            }
-            if (t && _.label < t[2]) {
-              _.label = t[2];
-              _.ops.push(op);
-              break;
-            }
-            if (t[2]) _.ops.pop();
-            _.trys.pop();
-            continue;
-        }
-        op = body.call(thisArg, _);
-      } catch (e) {
-        op = [6, e];
-        y = 0;
-      } finally {
-        f = t = 0;
-      }
-    }
-    if (op[0] & 5) throw op[1];
-    return {
-      value: op[0] ? op[1] : void 0,
-      done: true
-    };
-  }
-};
+// extracted by mini-css-extract-plugin
 
-
-
-var usePopularCoinStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('popular', {
-  state: function state() {
-    return {
-      coinList: [],
-      fetchFlag: false
-    };
-  },
-  getters: {
-    getCoinList: function getCoinList(state) {
-      return state.coinList;
-    },
-    getFetchFlag: function getFetchFlag(state) {
-      return state.fetchFlag;
-    },
-    getFilteredCoinList: function getFilteredCoinList() {
-      return function (allCoinList) {
-        var result = [];
-        src_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.favCoins.forEach(function (item) {
-          allCoinList.forEach(function (coin) {
-            if (item === coin.id) {
-              result.push(coin);
-            }
-          });
-        });
-        return result;
-      };
+    if(true) {
+      // 1676397546402
+      var cssReload = __webpack_require__(/*! ../../../mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
     }
-  },
-  actions: {
-    setCoinList: function setCoinList() {
-      return __awaiter(this, void 0, void 0, function () {
-        var data, err_1;
-        return __generator(this, function (_a) {
-          switch (_a.label) {
-            case 0:
-              this.fetchFlag = false;
-              _a.label = 1;
-            case 1:
-              _a.trys.push([1, 3, 4, 5]);
-              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h")];
-            case 2:
-              data = _a.sent();
-              this.coinList = this.getFilteredCoinList(data);
-              return [3, 5];
-            case 3:
-              err_1 = _a.sent();
-              console.warn(err_1, 'in popular store');
-              return [3, 5];
-            case 4:
-              this.fetchFlag = true;
-              return [7];
-            case 5:
-              return [2];
-          }
-        });
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ "./src/utils/Helper.ts":
-/*!*****************************!*\
-  !*** ./src/utils/Helper.ts ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "favCoins": () => (/* binding */ favCoins)
-/* harmony export */ });
-var favCoins = ['bitcoin', 'ethereum', 'tether', 'binancecoin', 'ripple', 'cardano', 'solana', 'dogecoin', 'polkadot', 'shiba-inu', 'tron', 'avalanche-2', 'litecoin', 'bittorrent', 'neo', 'fantom'];
+  
 
 /***/ }),
 
@@ -710,7 +517,132 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_node_modules_ts_loader_index_js_clonedRuleSet_6_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_3_node_modules_vue_loader_dist_index_js_ruleSet_1_rules_10_use_0_popular_vue_vue_type_template_id_766947ad_ts_true__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!../../../node_modules/ts-loader/index.js??clonedRuleSet-6!../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!../../../node_modules/vue-loader/dist/index.js??ruleSet[1].rules[10].use[0]!./popular.vue?vue&type=template&id=766947ad&ts=true */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use!./node_modules/ts-loader/index.js??clonedRuleSet-6!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[3]!./node_modules/vue-loader/dist/index.js??ruleSet[1].rules[10].use[0]!./src/pages/home/popular.vue?vue&type=template&id=766947ad&ts=true");
 
 
+/***/ }),
+
+/***/ "./node_modules/epic-spinners/dist/es/components/HollowDotsSpinner.js":
+/*!****************************************************************************!*\
+  !*** ./node_modules/epic-spinners/dist/es/components/HollowDotsSpinner.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HollowDotsSpinner": () => (/* binding */ HollowDotsSpinner)
+/* harmony export */ });
+/* harmony import */ var _style_HollowDotsSpinner_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../style/HollowDotsSpinner.css */ "./node_modules/epic-spinners/dist/style/HollowDotsSpinner.css");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
+/* harmony import */ var _plugin_vue_export_helper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../plugin-vue_export-helper.js */ "./node_modules/epic-spinners/dist/es/plugin-vue_export-helper.js");
+
+
+
+
+var HollowDotsSpinner_vue_vue_type_style_index_0_lang = '';
+
+const _sfc_main = {
+  name: 'HollowDotsSpinner',
+
+  props: {
+    animationDuration: {
+      type: Number,
+      default: 1000,
+    },
+    dotSize: {
+      type: Number,
+      default: 15,
+    },
+    dotsNum: {
+      type: Number,
+      default: 3,
+    },
+    color: {
+      type: String,
+      default: '#fff',
+    },
+  },
+
+  computed: {
+    horizontalMargin() {
+      return this.dotSize / 2
+    },
+
+    spinnerStyle() {
+      return {
+        height: `${this.dotSize}px`,
+        width: `${(this.dotSize + this.horizontalMargin * 2) * this.dotsNum}px`,
+      }
+    },
+
+    dotStyle() {
+      return {
+        animationDuration: `${this.animationDuration}ms`,
+        width: `${this.dotSize}px`,
+        height: `${this.dotSize}px`,
+        margin: `0 ${this.horizontalMargin}px`,
+        borderWidth: `${this.dotSize / 5}px`,
+        borderColor: this.color,
+      }
+    },
+
+    dotsStyles() {
+      const dotsStyles = [];
+      const delayModifier = 0.3;
+      const basicDelay = this.animationDuration;
+
+      for (let i = 1; i <= this.dotsNum; i++) {
+        dotsStyles.push({
+          animationDelay: `${basicDelay * i * delayModifier}ms`,
+          ...this.dotStyle,
+        });
+      }
+
+      return dotsStyles
+    },
+  },
+};
+
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  return ((0,vue__WEBPACK_IMPORTED_MODULE_1__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_1__.createElementBlock)("div", {
+    class: "hollow-dots-spinner",
+    style: (0,vue__WEBPACK_IMPORTED_MODULE_1__.normalizeStyle)($options.spinnerStyle)
+  }, [
+    ((0,vue__WEBPACK_IMPORTED_MODULE_1__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_1__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_1__.renderList)($options.dotsStyles, (ds, index) => {
+      return ((0,vue__WEBPACK_IMPORTED_MODULE_1__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_1__.createElementBlock)("div", {
+        key: index,
+        class: "dot",
+        style: (0,vue__WEBPACK_IMPORTED_MODULE_1__.normalizeStyle)(ds)
+      }, null, 4))
+    }), 128))
+  ], 4))
+}
+var HollowDotsSpinner = /*#__PURE__*/(0,_plugin_vue_export_helper_js__WEBPACK_IMPORTED_MODULE_2__._export_sfc)(_sfc_main, [['render',_sfc_render]]);
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/epic-spinners/dist/es/plugin-vue_export-helper.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/epic-spinners/dist/es/plugin-vue_export-helper.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "_export_sfc": () => (/* binding */ _export_sfc)
+/* harmony export */ });
+var _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
+
+
+
+
 /***/ })
 
 }]);
-//# sourceMappingURL=src_pages_home_popular_vue-node_modules_epic-spinners_dist_style_HollowDotsSpinner_css.js.map
+//# sourceMappingURL=src_pages_home_popular_vue.js.map

@@ -9,5 +9,11 @@
   .btn-warning{
     @apply bg-amber-500 text-light hover:shadow-amber-500
   }
+  .btn-sm{
+    @apply !text-0.9 ;
+  }
+  .btn-dark{
+    @apply text-light bg-dark hover:shadow-dark
+  }
 
 }

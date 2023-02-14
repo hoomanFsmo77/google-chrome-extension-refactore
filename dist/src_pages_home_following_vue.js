@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 /* harmony import */ var src_components_Home_Welcome_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/components/Home/Welcome.vue */ "./src/components/Home/Welcome.vue");
 /* harmony import */ var src_components_Home_FollowingList_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/components/Home/FollowingList.vue */ "./src/components/Home/FollowingList.vue");
-/* harmony import */ var src_composables_useUser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/composables/useUser */ "./src/composables/useUser.ts");
+/* harmony import */ var src_composables__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/composables */ "./src/composables/index.ts");
 
 
 
@@ -24,7 +24,7 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _a) {
     var expose = _a.expose;
     expose();
-    var loginStatus = (0,src_composables_useUser__WEBPACK_IMPORTED_MODULE_3__.useUser)().loginStatus;
+    var loginStatus = (0,src_composables__WEBPACK_IMPORTED_MODULE_3__.useUserIndex)().loginStatus;
     var __returned__ = {
       loginStatus: loginStatus,
       Welcome: src_components_Home_Welcome_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
@@ -62,59 +62,6 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     key: 1
   }))]);
 }
-
-/***/ }),
-
-/***/ "./src/composables/useUser.ts":
-/*!************************************!*\
-  !*** ./src/composables/useUser.ts ***!
-  \************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useUser": () => (/* binding */ useUser)
-/* harmony export */ });
-/* harmony import */ var src_store_user__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/store/user */ "./src/store/user.ts");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
-
-
-var useUser = function useUser() {
-  var userStore = (0,src_store_user__WEBPACK_IMPORTED_MODULE_0__.useUserStore)();
-  var loginStatus = (0,vue__WEBPACK_IMPORTED_MODULE_1__.computed)(function () {
-    return userStore.getLoginStatus;
-  });
-  return {
-    loginStatus: loginStatus
-  };
-};
-
-/***/ }),
-
-/***/ "./src/store/user.ts":
-/*!***************************!*\
-  !*** ./src/store/user.ts ***!
-  \***************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "useUserStore": () => (/* binding */ useUserStore)
-/* harmony export */ });
-/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
-
-var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_0__.defineStore)('user', {
-  state: function state() {
-    return {
-      loginStatus: false
-    };
-  },
-  getters: {
-    getLoginStatus: function getLoginStatus(state) {
-      return state.loginStatus;
-    }
-  }
-});
 
 /***/ }),
 

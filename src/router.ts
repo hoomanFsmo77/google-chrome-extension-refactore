@@ -33,12 +33,25 @@ const routes:RouteRecordRaw[]=[
             {
                 path:'/user',
                 name:'index-user',
-                component:()=>import('./pages/user/index.vue')
+                component:()=>import('./pages/user/index.vue'),
+
             },
             {
                 path:'/search',
                 name:'index-search',
-                component:()=>import('./pages/search/index.vue')
+                component:()=>import('./pages/search/index.vue'),
+                children:[
+                    {
+                        name: 'index-search-trending',
+                        path: '/trending',
+                        component:()=>import('src/pages/search/Trending.vue')
+                    },
+                    {
+                        name: 'index-search-detail',
+                        path: '/detail',
+                        component:()=>import('src/pages/search/Detail.vue')
+                    },
+                ]
             },
 
         ]

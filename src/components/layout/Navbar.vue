@@ -8,7 +8,7 @@
         </router-link>
       </li>
       <li>
-        <router-link active-class="navbar-link-active" :to="{name:'index-search'}">
+        <router-link active-class="navbar-link-active" :to="{name:'index-search-trending'}">
           <font-awesome-icon class="text-1.1 text-gray-700" icon="fa-solid fa-magnifying-glass" />
            <span  class="nav-tracer"></span>
         </router-link>

@@ -3,4 +3,8 @@
   .home-header{
     @apply flex justify-between py-0.5 pr-1.5 pl-1 items-center
   }
+  .search-header{
+    @extend .home-header;
+    @apply !py-1 relative border-b-[1px] border-b-gray-200;
+  }
 }
