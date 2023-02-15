@@ -11,7 +11,7 @@ const routes:RouteRecordRaw[]=[
         },
         children:[
             {
-                path:'/home',
+                path:'home',
                 name:'index-home',
                 component:()=>import('./pages/home/index.vue'),
                 redirect:{
@@ -19,37 +19,41 @@ const routes:RouteRecordRaw[]=[
                 },
                 children:[
                     {
-                        path:'/popular',
+                        path:'popular',
                         name:'index-home-popular',
                         component:()=>import('./pages/home/popular.vue')
                     },
                     {
-                        path:'/following',
+                        path:'following',
                         name:'index-home-following',
                         component:()=>import('./pages/home/following.vue')
                     },
                 ]
             },
             {
-                path:'/user',
+                path:'user',
                 name:'index-user',
                 component:()=>import('./pages/user/index.vue'),
 
             },
             {
-                path:'/search',
+                path:'search',
                 name:'index-search',
                 component:()=>import('./pages/search/index.vue'),
+                redirect:{
+                  name:'index-search-trending'
+                },
                 children:[
                     {
                         name: 'index-search-trending',
-                        path: '/trending',
+                        path: 'trending',
                         component:()=>import('src/pages/search/Trending.vue')
                     },
                     {
                         name: 'index-search-detail',
-                        path: '/detail',
-                        component:()=>import('src/pages/search/Detail.vue')
+                        path: 'detail/:id',
+                        component:()=>import('src/pages/search/Detail.vue'),
+                        props:true
                     },
                 ]
             },
