@@ -420,7 +420,6 @@ input::placeholder {
 }
 
 input:focus {
-  border-style: none;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -576,12 +575,24 @@ input:focus {
   margin-bottom: 0.5rem;
 }
 
+.\!mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.\!mb-0\.3 {
+  margin-bottom: 0.3rem !important;
+}
+
 .mb-0 {
   margin-bottom: 0;
 }
 
 .mb-0\.2 {
   margin-bottom: 0.2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
 }
 
 .ml-0 {
@@ -624,6 +635,10 @@ input:focus {
   margin-top: 1rem;
 }
 
+.mt-1\.5 {
+  margin-top: 1.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -662,6 +677,10 @@ input:focus {
 
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .gap-0 {
@@ -788,6 +807,10 @@ input:focus {
 
 .text-1\.2 {
   font-size: 1.2rem;
+}
+
+.text-1\.3 {
+  font-size: 1.3rem;
 }
 
 .text-1\.5 {
@@ -950,7 +973,7 @@ input:focus {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
-.home-header, .search-header {
+.home-header, .user-header, .search-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -965,6 +988,16 @@ input:focus {
   border-bottom-width: 1px;
   --tw-border-opacity: 1;
   border-bottom-color: rgb(229 231 235/var(--tw-border-opacity));
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.user-header {
+  border-bottom-width: 1px;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(229 231 235/var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255/var(--tw-bg-opacity));
   padding-top: 1rem !important;
   padding-bottom: 1rem !important;
 }
@@ -1079,6 +1112,17 @@ input:focus {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
 }
 
+.btn[disabled] {
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(75 85 99/var(--tw-bg-opacity)) !important;
+}
+
+.btn[disabled]:hover {
+  --tw-shadow: 0 0 #0000 !important;
+  --tw-shadow-colored: 0 0 #0000 !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow) !important;
+}
+
 .btn-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(41 171 225/var(--tw-bg-opacity));
@@ -1117,6 +1161,37 @@ input:focus {
 .btn-dark:hover {
   --tw-shadow-color: #333;
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.input[type=text], .input[type=password] {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  border-radius: 8px;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219/var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255/var(--tw-bg-opacity));
+  padding: 0.7rem;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.input[type=text]:focus, .input[type=password]:focus {
+  border-width: 1px !important;
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(209 213 219/var(--tw-border-opacity)) !important;
+  --tw-shadow: 0 0 30px;
+  --tw-shadow-colored: 0 0 30px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+  --tw-shadow-color: rgb(41 171 225 / 0.1);
+  --tw-shadow: var(--tw-shadow-colored);
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 rgba(0, 0, 0, 0));
+  --tw-ring-color: rgb(41 171 225 / 0.5);
 }
 
 .price-card {
@@ -1247,6 +1322,13 @@ input:focus {
   --tw-shadow: 0 0 30px rgba(0,0,0,0.2);
   --tw-shadow-colored: 0 0 30px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-ring-shadow, 0 0 rgba(0, 0, 0, 0)), var(--tw-shadow);
+}
+
+#auth {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(243, 244, 246, 0.7);
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=app.css.map*/

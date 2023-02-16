@@ -3,9 +3,9 @@ self["webpackHotUpdatetemplate"]("background",{},
 /******/ function(__webpack_require__) { // webpackRuntimeModules
 /******/ /* webpack/runtime/getFullHash */
 /******/ (() => {
-/******/ 	__webpack_require__.h = () => ("4e7667dd986b91cf83aa")
+/******/ 	__webpack_require__.h = () => ("d82495fd8dec404621ea")
 /******/ })();
 /******/ 
 /******/ }
 );
-//# sourceMappingURL=background.fd03f5915796681d7d04.hot-update.js.map
+//# sourceMappingURL=background.641228b7b7574e793911.hot-update.js.map

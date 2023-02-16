@@ -15,9 +15,14 @@ export interface Popular_Store {
 
 //////// user types
 export interface User_Store {
-    loginStatus:boolean
+    loginStatus:boolean,
+    loginFetchFlag:boolean,
+    email:string|undefined
 }
-
+export interface User_Info {
+    email:string
+    password:string
+}
 //////// search types
 export interface Search_Result {
     id:string
@@ -44,3 +49,8 @@ export interface Search_Store {
     trendingList:Trending_List[],
     trendingFlag:boolean
 }
+
+
+//////////// helpers
+export type EmailValidation=(data:any[],email:string)=>boolean;
+export type CheckEmail=(email:string)=>Promise<boolean>

@@ -13011,7 +13011,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHouse, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faMagnifyingGlass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faX, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faStar, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHeart, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowUpLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowDownLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowLeft);
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHouse, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faMagnifyingGlass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faX, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faStar, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHeart, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowUpLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowDownLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUserPlus);
 
 
 
@@ -13072,7 +13072,7 @@ var routes = [{
     path: 'user',
     name: 'index-user',
     component: function component() {
-      return __webpack_require__.e(/*! import() */ "src_pages_user_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/user/index.vue */ "./src/pages/user/index.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_user_index_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/user/index.vue */ "./src/pages/user/index.vue"));
     }
   }, {
     path: 'search',
@@ -14333,7 +14333,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676486521965
+      // 1676575991522
       var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14353,7 +14353,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676486521595
+      // 1676575991176
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14373,7 +14373,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676486521604
+      // 1676575991182
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14393,7 +14393,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676486521626
+      // 1676575991186
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -37461,7 +37461,7 @@ function useRoute() {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("4e7667dd986b91cf83aa")
+/******/ 		__webpack_require__.h = () => ("7e58c9a1e421e2878606")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */
