@@ -1,5 +1,5 @@
 "use strict";
-self["webpackHotUpdatetemplate"]("src_composables_index_ts",{
+self["webpackHotUpdatetemplate"]("app",{
 
 /***/ "./src/store/user.ts":
 /*!***************************!*\
@@ -222,16 +222,132 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
         });
       });
     },
-    triggerLogout: function triggerLogout() {
+    resetUser: function resetUser() {
       (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.deleteCookie)(10);
       this.email = undefined;
       this.loginStatus = false;
       this.favCoins = [];
+    },
+    triggerAutoLogin: function triggerAutoLogin() {
+      return __awaiter(this, void 0, void 0, function () {
+        var token, data, e_2;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              token = (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.extractToken)();
+              if (!token) return [3, 5];
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3,, 4]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://extension-cdfdf-default-rtdb.firebaseio.com/users/".concat(token, ".json"))];
+            case 2:
+              data = _a.sent();
+              this.email = data.email;
+              this.loginStatus = true;
+              return [3, 4];
+            case 3:
+              e_2 = _a.sent();
+              this.resetUser();
+              return [3, 4];
+            case 4:
+              return [3, 6];
+            case 5:
+              this.resetUser();
+              _a.label = 6;
+            case 6:
+              return [2];
+          }
+        });
+      });
     }
   }
 });
 
+/***/ }),
+
+/***/ "./src/assets/styles/App.scss":
+/*!************************************!*\
+  !*** ./src/assets/styles/App.scss ***!
+  \************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+    if(true) {
+      // 1676730874053
+      var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
+
+/***/ }),
+
+/***/ "./src/assets/styles/Tailwind.config/Tailwind.base.scss":
+/*!**************************************************************!*\
+  !*** ./src/assets/styles/Tailwind.config/Tailwind.base.scss ***!
+  \**************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+    if(true) {
+      // 1676730873697
+      var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
+
+/***/ }),
+
+/***/ "./src/assets/styles/Tailwind.config/Tailwind.component.scss":
+/*!*******************************************************************!*\
+  !*** ./src/assets/styles/Tailwind.config/Tailwind.component.scss ***!
+  \*******************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+    if(true) {
+      // 1676730873684
+      var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
+
+/***/ }),
+
+/***/ "./src/assets/styles/Tailwind.config/Tailwind.utilities.scss":
+/*!*******************************************************************!*\
+  !*** ./src/assets/styles/Tailwind.config/Tailwind.utilities.scss ***!
+  \*******************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+    if(true) {
+      // 1676730873692
+      var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
+      module.hot.dispose(cssReload);
+      module.hot.accept(undefined, cssReload);
+    }
+  
+
 /***/ })
 
-});
-//# sourceMappingURL=src_composables_index_ts.0352d1a1e2fb2923d904.hot-update.js.map
+},
+/******/ function(__webpack_require__) { // webpackRuntimeModules
+/******/ /* webpack/runtime/getFullHash */
+/******/ (() => {
+/******/ 	__webpack_require__.h = () => ("2f8c1f76b787ea9b4ad3")
+/******/ })();
+/******/ 
+/******/ }
+);
+//# sourceMappingURL=app.44eefaad555f3b386e19.hot-update.js.map

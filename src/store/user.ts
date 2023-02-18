@@ -2,7 +2,7 @@ import {defineStore} from "pinia";
 import {User_Store,User_Info} from "src/utils/Types";
 import {ofetch} from "ofetch";
 import {loginValidation, setCookie,extractUser} from "../utils/Helper";
-import {deleteCookie} from "src/utils/Helper";
+import {deleteCookie,extractToken} from "src/utils/Helper";
 
 export const useUserStore=defineStore('user',{
     state:():User_Store=>{
@@ -61,11 +61,25 @@ export const useUserStore=defineStore('user',{
 
 
          },
-        triggerLogout(){
+        resetUser(){
             deleteCookie(10)
             this.email=undefined
             this.loginStatus=false
             this.favCoins=[]
+        },
+        async triggerAutoLogin(){
+           const token=extractToken()
+            if(token){
+                try {
+                    const data=await ofetch<User_Info>(`https://extension-cdfdf-default-rtdb.firebaseio.com/users/${token}.json`)
+                    this.email=data.email
+                    this.loginStatus=true
+                } catch (e) {
+                    this.resetUser()
+                }
+            }else{
+                this.resetUser()
+            }
         }
     }
 

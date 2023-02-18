@@ -215,7 +215,7 @@ __webpack_require__.r(__webpack_exports__);
     expose();
     var userStore = (0,_composables__WEBPACK_IMPORTED_MODULE_1__.useUserIndex)().userStore;
     var logoutHandler = function logoutHandler() {
-      userStore.triggerLogout();
+      userStore.resetUser();
     };
     var __returned__ = {
       userStore: userStore,

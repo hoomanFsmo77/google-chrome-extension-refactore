@@ -12998,29 +12998,148 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_Tailwind_config_Tailwind_base_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/styles/Tailwind.config/Tailwind.base.scss */ "./src/assets/styles/Tailwind.config/Tailwind.base.scss");
 /* harmony import */ var _assets_styles_Tailwind_config_Tailwind_component_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/styles/Tailwind.config/Tailwind.component.scss */ "./src/assets/styles/Tailwind.config/Tailwind.component.scss");
 /* harmony import */ var _assets_styles_Tailwind_config_Tailwind_utilities_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/styles/Tailwind.config/Tailwind.utilities.scss */ "./src/assets/styles/Tailwind.config/Tailwind.utilities.scss");
-/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.mjs");
-/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.mjs");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
-/* harmony import */ var src_App_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! src/App.vue */ "./src/App.vue");
-/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
-/* harmony import */ var src_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/router */ "./src/router.ts");
+/* harmony import */ var _plugins_auth__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./plugins/auth */ "./src/plugins/auth.ts");
+/* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.mjs");
+/* harmony import */ var _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/vue-fontawesome */ "./node_modules/@fortawesome/vue-fontawesome/index.es.js");
+/* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.mjs");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
+/* harmony import */ var src_App_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! src/App.vue */ "./src/App.vue");
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var src_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! src/router */ "./src/router.ts");
 
 
 
 
 
 
-_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_3__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHouse, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faMagnifyingGlass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faX, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faStar, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faHeart, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowUpLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowDownLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faArrowLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_5__.faUserPlus);
+
+_fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_4__.library.add(_fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faHouse, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faMagnifyingGlass, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faUser, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faX, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faStar, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faHeart, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faArrowUpLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faArrowDownLong, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faArrowLeft, _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_6__.faUserPlus);
 
 
 
 
-var app = (0,vue__WEBPACK_IMPORTED_MODULE_6__.createApp)(src_App_vue__WEBPACK_IMPORTED_MODULE_7__["default"]);
-app.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_4__.FontAwesomeIcon);
-app.use((0,pinia__WEBPACK_IMPORTED_MODULE_9__.createPinia)());
-app.use(src_router__WEBPACK_IMPORTED_MODULE_8__["default"]);
+var app = (0,vue__WEBPACK_IMPORTED_MODULE_7__.createApp)(src_App_vue__WEBPACK_IMPORTED_MODULE_8__["default"]);
+app.component('font-awesome-icon', _fortawesome_vue_fontawesome__WEBPACK_IMPORTED_MODULE_5__.FontAwesomeIcon);
+app.use((0,pinia__WEBPACK_IMPORTED_MODULE_10__.createPinia)());
+app.use(src_router__WEBPACK_IMPORTED_MODULE_9__["default"]);
+app.use(_plugins_auth__WEBPACK_IMPORTED_MODULE_3__["default"]);
 app.mount('#app');
+
+/***/ }),
+
+/***/ "./src/composables/index.ts":
+/*!**********************************!*\
+  !*** ./src/composables/index.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "usePopularIndex": () => (/* binding */ usePopularIndex),
+/* harmony export */   "useSearchIndex": () => (/* binding */ useSearchIndex),
+/* harmony export */   "useUserIndex": () => (/* binding */ useUserIndex)
+/* harmony export */ });
+/* harmony import */ var src_store_popular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/store/popular */ "./src/store/popular.ts");
+/* harmony import */ var src_store_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/store/user */ "./src/store/user.ts");
+/* harmony import */ var _store_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/search */ "./src/store/search.ts");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
+
+
+
+
+var usePopularIndex = function usePopularIndex() {
+  var popularStore = (0,src_store_popular__WEBPACK_IMPORTED_MODULE_0__.usePopularCoinStore)();
+  var popularCoinLists = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return popularStore.getCoinList;
+  });
+  var fetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return popularStore.getFetchFlag;
+  });
+  var bitcoinPrice = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return popularStore.getBitCoinPrice;
+  });
+  return {
+    popularStore: popularStore,
+    popularCoinLists: popularCoinLists,
+    fetchFlag: fetchFlag,
+    bitcoinPrice: bitcoinPrice
+  };
+};
+var useUserIndex = function useUserIndex() {
+  var userStore = (0,src_store_user__WEBPACK_IMPORTED_MODULE_1__.useUserStore)();
+  var loginStatus = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.getLoginStatus;
+  });
+  var signUpFetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.signUpFetchFlag;
+  });
+  var signInErrorFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.signInErrorFlag;
+  });
+  var userEmail = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.email;
+  });
+  var favCoinLength = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.getFavCoinLength;
+  });
+  return {
+    loginStatus: loginStatus,
+    userStore: userStore,
+    signUpFetchFlag: signUpFetchFlag,
+    signInErrorFlag: signInErrorFlag,
+    userEmail: userEmail,
+    favCoinLength: favCoinLength
+  };
+};
+var useSearchIndex = function useSearchIndex() {
+  var searchStore = (0,_store_search__WEBPACK_IMPORTED_MODULE_2__.useSearchStore)();
+  var searchResult = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return searchStore.searchResult;
+  });
+  var searchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return searchStore.getSearchFlag;
+  });
+  var searchText = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return searchStore.searchText;
+  });
+  var trendingList = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return searchStore.getTrendingList;
+  });
+  var trendingFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return searchStore.getTrendingFlag;
+  });
+  return {
+    searchStore: searchStore,
+    searchResult: searchResult,
+    searchFlag: searchFlag,
+    searchText: searchText,
+    trendingList: trendingList,
+    trendingFlag: trendingFlag
+  };
+};
+
+/***/ }),
+
+/***/ "./src/plugins/auth.ts":
+/*!*****************************!*\
+  !*** ./src/plugins/auth.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _composables__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../composables */ "./src/composables/index.ts");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  install: function install(app, config) {
+    var userStore = (0,_composables__WEBPACK_IMPORTED_MODULE_0__.useUserIndex)().userStore;
+    userStore.triggerAutoLogin();
+  }
+});
 
 /***/ }),
 
@@ -13059,20 +13178,20 @@ var routes = [{
       path: 'popular',
       name: 'index-home-popular',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_home_popular_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/popular.vue */ "./src/pages/home/popular.vue"));
+        return __webpack_require__.e(/*! import() */ "src_pages_home_popular_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/popular.vue */ "./src/pages/home/popular.vue"));
       }
     }, {
       path: 'following',
       name: 'index-home-following',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_home_following_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/following.vue */ "./src/pages/home/following.vue"));
+        return __webpack_require__.e(/*! import() */ "src_pages_home_following_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/home/following.vue */ "./src/pages/home/following.vue"));
       }
     }]
   }, {
     path: 'user',
     name: 'index-user',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_user_index_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/user/index.vue */ "./src/pages/user/index.vue"));
+      return __webpack_require__.e(/*! import() */ "src_pages_user_index_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/user/index.vue */ "./src/pages/user/index.vue"));
     }
   }, {
     path: 'search',
@@ -13087,13 +13206,13 @@ var routes = [{
       name: 'index-search-trending',
       path: 'trending',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_composables_index_ts"), __webpack_require__.e("src_pages_search_Trending_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! src/pages/search/Trending.vue */ "./src/pages/search/Trending.vue"));
+        return __webpack_require__.e(/*! import() */ "src_pages_search_Trending_vue").then(__webpack_require__.bind(__webpack_require__, /*! src/pages/search/Trending.vue */ "./src/pages/search/Trending.vue"));
       }
     }, {
       name: 'index-search-detail',
       path: 'detail/:id',
       component: function component() {
-        return Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_ofetch_dist_index_mjs"), __webpack_require__.e("src_pages_search_Detail_vue")]).then(__webpack_require__.bind(__webpack_require__, /*! src/pages/search/Detail.vue */ "./src/pages/search/Detail.vue"));
+        return __webpack_require__.e(/*! import() */ "src_pages_search_Detail_vue").then(__webpack_require__.bind(__webpack_require__, /*! src/pages/search/Detail.vue */ "./src/pages/search/Detail.vue"));
       },
       props: true
     }]
@@ -13104,6 +13223,894 @@ var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   routes: routes
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);
+
+/***/ }),
+
+/***/ "./src/store/popular.ts":
+/*!******************************!*\
+  !*** ./src/store/popular.ts ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "usePopularCoinStore": () => (/* binding */ usePopularCoinStore)
+/* harmony export */ });
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
+/* harmony import */ var src_utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/utils/Helper */ "./src/utils/Helper.ts");
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) {
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+        if (y = 0, t) op = [op[0] & 2, t.value];
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+          case 4:
+            _.label++;
+            return {
+              value: op[1],
+              done: false
+            };
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+          case 7:
+            op = _.ops.pop();
+            _.trys.pop();
+            continue;
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+              _.ops.push(op);
+              break;
+            }
+            if (t[2]) _.ops.pop();
+            _.trys.pop();
+            continue;
+        }
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+
+
+
+var usePopularCoinStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('popular', {
+  state: function state() {
+    return {
+      coinList: [],
+      fetchFlag: false
+    };
+  },
+  getters: {
+    getCoinList: function getCoinList(state) {
+      return state.coinList;
+    },
+    getFetchFlag: function getFetchFlag(state) {
+      return state.fetchFlag;
+    },
+    getFilteredCoinList: function getFilteredCoinList() {
+      return function (allCoinList) {
+        var result = [];
+        src_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.favCoins.forEach(function (item) {
+          allCoinList.forEach(function (coin) {
+            if (item === coin.id) {
+              result.push(coin);
+            }
+          });
+        });
+        return result;
+      };
+    },
+    getBitCoinPrice: function getBitCoinPrice(state) {
+      if (state.fetchFlag) {
+        return state.coinList.filter(function (item) {
+          return item.id === 'bitcoin';
+        })[0].current_price;
+      }
+    }
+  },
+  actions: {
+    setCoinList: function setCoinList() {
+      return __awaiter(this, void 0, void 0, function () {
+        var data, err_1;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              this.fetchFlag = false;
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3, 4, 5]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=200&page=1&sparkline=false&price_change_percentage=1h")];
+            case 2:
+              data = _a.sent();
+              this.coinList = this.getFilteredCoinList(data);
+              return [3, 5];
+            case 3:
+              err_1 = _a.sent();
+              console.warn(err_1, 'in popular store');
+              return [3, 5];
+            case 4:
+              this.fetchFlag = true;
+              return [7];
+            case 5:
+              return [2];
+          }
+        });
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./src/store/search.ts":
+/*!*****************************!*\
+  !*** ./src/store/search.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useSearchStore": () => (/* binding */ useSearchStore)
+/* harmony export */ });
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) {
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+        if (y = 0, t) op = [op[0] & 2, t.value];
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+          case 4:
+            _.label++;
+            return {
+              value: op[1],
+              done: false
+            };
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+          case 7:
+            op = _.ops.pop();
+            _.trys.pop();
+            continue;
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+              _.ops.push(op);
+              break;
+            }
+            if (t[2]) _.ops.pop();
+            _.trys.pop();
+            continue;
+        }
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+
+
+var useSearchStore = (0,pinia__WEBPACK_IMPORTED_MODULE_0__.defineStore)('search', {
+  state: function state() {
+    return {
+      searchText: '',
+      searchResult: [],
+      searchFlag: false,
+      trendingList: [],
+      trendingFlag: false
+    };
+  },
+  getters: {
+    getSearchResult: function getSearchResult(state) {
+      return state.searchResult;
+    },
+    getSearchFlag: function getSearchFlag(state) {
+      return state.searchFlag;
+    },
+    getTrendingList: function getTrendingList(state) {
+      return state.trendingList;
+    },
+    getTrendingFlag: function getTrendingFlag(state) {
+      return state.trendingFlag;
+    }
+  },
+  actions: {
+    triggerSearch: function triggerSearch(value) {
+      return __awaiter(this, void 0, void 0, function () {
+        var data, err_1;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              this.searchText = value;
+              this.searchFlag = false;
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3, 4, 5]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_1__.ofetch)("https://api.coingecko.com/api/v3/search", {
+                query: {
+                  query: value
+                }
+              })];
+            case 2:
+              data = _a.sent();
+              this.searchResult = data.coins;
+              return [3, 5];
+            case 3:
+              err_1 = _a.sent();
+              console.warn(err_1, 'in search store');
+              return [3, 5];
+            case 4:
+              this.searchFlag = true;
+              return [7];
+            case 5:
+              return [2];
+          }
+        });
+      });
+    },
+    triggerTrendingList: function triggerTrendingList() {
+      return __awaiter(this, void 0, void 0, function () {
+        var data, e_1;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              this.trendingFlag = false;
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3, 4, 5]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_1__.ofetch)("https://api.coingecko.com/api/v3/search/trending")];
+            case 2:
+              data = _a.sent();
+              this.trendingList = data.coins;
+              return [3, 5];
+            case 3:
+              e_1 = _a.sent();
+              console.log(e_1, 'in search store');
+              return [3, 5];
+            case 4:
+              this.trendingFlag = true;
+              return [7];
+            case 5:
+              return [2];
+          }
+        });
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./src/store/user.ts":
+/*!***************************!*\
+  !*** ./src/store/user.ts ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useUserStore": () => (/* binding */ useUserStore)
+/* harmony export */ });
+/* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
+/* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
+/* harmony import */ var _utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/utils/Helper */ "./src/utils/Helper.ts");
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) {
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+        if (y = 0, t) op = [op[0] & 2, t.value];
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+          case 4:
+            _.label++;
+            return {
+              value: op[1],
+              done: false
+            };
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+          case 7:
+            op = _.ops.pop();
+            _.trys.pop();
+            continue;
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+              _.ops.push(op);
+              break;
+            }
+            if (t[2]) _.ops.pop();
+            _.trys.pop();
+            continue;
+        }
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+
+
+
+
+var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
+  state: function state() {
+    return {
+      loginStatus: false,
+      favCoins: [],
+      signUpFetchFlag: false,
+      signInErrorFlag: false,
+      email: undefined
+    };
+  },
+  getters: {
+    getLoginStatus: function getLoginStatus(state) {
+      return state.loginStatus;
+    },
+    getFavCoinLength: function getFavCoinLength(state) {
+      return state.favCoins.length;
+    }
+  },
+  actions: {
+    triggerSignUp: function triggerSignUp(user_info) {
+      return __awaiter(this, void 0, void 0, function () {
+        var data, err_1;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              this.signUpFetchFlag = true;
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3, 4, 5]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://extension-cdfdf-default-rtdb.firebaseio.com/users.json", {
+                method: 'POST',
+                body: JSON.stringify({
+                  email: user_info.email,
+                  password: user_info.password
+                })
+              })];
+            case 2:
+              data = _a.sent();
+              this.email = user_info.email;
+              this.loginStatus = true;
+              (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.setCookie)(10, data.name);
+              return [3, 5];
+            case 3:
+              err_1 = _a.sent();
+              this.loginStatus = false;
+              console.log(err_1);
+              return [3, 5];
+            case 4:
+              this.signUpFetchFlag = false;
+              return [7];
+            case 5:
+              return [2];
+          }
+        });
+      });
+    },
+    triggerSignIn: function triggerSignIn(user_info) {
+      return __awaiter(this, void 0, void 0, function () {
+        var data, targetUser, e_1;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              this.signInErrorFlag = false;
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3,, 4]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://extension-cdfdf-default-rtdb.firebaseio.com/users.json")];
+            case 2:
+              data = _a.sent();
+              this.signInErrorFlag = !(0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.loginValidation)(Object.entries(data), user_info);
+              if (!this.signInErrorFlag) {
+                targetUser = (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.extractUser)(Object.entries(data), user_info);
+                this.email = user_info.email;
+                this.loginStatus = true;
+                (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.setCookie)(10, targetUser[0]);
+              }
+              return [3, 4];
+            case 3:
+              e_1 = _a.sent();
+              this.signInErrorFlag = true;
+              return [3, 4];
+            case 4:
+              return [2];
+          }
+        });
+      });
+    },
+    resetUser: function resetUser() {
+      (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.deleteCookie)(10);
+      this.email = undefined;
+      this.loginStatus = false;
+      this.favCoins = [];
+    },
+    triggerAutoLogin: function triggerAutoLogin() {
+      return __awaiter(this, void 0, void 0, function () {
+        var token, data, e_2;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              token = (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.extractToken)();
+              if (!token) return [3, 5];
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3,, 4]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://extension-cdfdf-default-rtdb.firebaseio.com/users/".concat(token, ".json"))];
+            case 2:
+              data = _a.sent();
+              this.email = data.email;
+              this.loginStatus = true;
+              return [3, 4];
+            case 3:
+              e_2 = _a.sent();
+              this.resetUser();
+              return [3, 4];
+            case 4:
+              return [3, 6];
+            case 5:
+              this.resetUser();
+              _a.label = 6;
+            case 6:
+              return [2];
+          }
+        });
+      });
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./src/utils/Helper.ts":
+/*!*****************************!*\
+  !*** ./src/utils/Helper.ts ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "checkEmail": () => (/* binding */ checkEmail),
+/* harmony export */   "deleteCookie": () => (/* binding */ deleteCookie),
+/* harmony export */   "emailRegex": () => (/* binding */ emailRegex),
+/* harmony export */   "emailValidation": () => (/* binding */ emailValidation),
+/* harmony export */   "extractToken": () => (/* binding */ extractToken),
+/* harmony export */   "extractUser": () => (/* binding */ extractUser),
+/* harmony export */   "favCoins": () => (/* binding */ favCoins),
+/* harmony export */   "loginValidation": () => (/* binding */ loginValidation),
+/* harmony export */   "passwordRegex": () => (/* binding */ passwordRegex),
+/* harmony export */   "setCookie": () => (/* binding */ setCookie)
+/* harmony export */ });
+/* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
+var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
+  function adopt(value) {
+    return value instanceof P ? value : new P(function (resolve) {
+      resolve(value);
+    });
+  }
+  return new (P || (P = Promise))(function (resolve, reject) {
+    function fulfilled(value) {
+      try {
+        step(generator.next(value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function rejected(value) {
+      try {
+        step(generator["throw"](value));
+      } catch (e) {
+        reject(e);
+      }
+    }
+    function step(result) {
+      result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+    }
+    step((generator = generator.apply(thisArg, _arguments || [])).next());
+  });
+};
+var __generator = undefined && undefined.__generator || function (thisArg, body) {
+  var _ = {
+      label: 0,
+      sent: function sent() {
+        if (t[0] & 1) throw t[1];
+        return t[1];
+      },
+      trys: [],
+      ops: []
+    },
+    f,
+    y,
+    t,
+    g;
+  return g = {
+    next: verb(0),
+    "throw": verb(1),
+    "return": verb(2)
+  }, typeof Symbol === "function" && (g[Symbol.iterator] = function () {
+    return this;
+  }), g;
+  function verb(n) {
+    return function (v) {
+      return step([n, v]);
+    };
+  }
+  function step(op) {
+    if (f) throw new TypeError("Generator is already executing.");
+    while (g && (g = 0, op[0] && (_ = 0)), _) {
+      try {
+        if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+        if (y = 0, t) op = [op[0] & 2, t.value];
+        switch (op[0]) {
+          case 0:
+          case 1:
+            t = op;
+            break;
+          case 4:
+            _.label++;
+            return {
+              value: op[1],
+              done: false
+            };
+          case 5:
+            _.label++;
+            y = op[1];
+            op = [0];
+            continue;
+          case 7:
+            op = _.ops.pop();
+            _.trys.pop();
+            continue;
+          default:
+            if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) {
+              _ = 0;
+              continue;
+            }
+            if (op[0] === 3 && (!t || op[1] > t[0] && op[1] < t[3])) {
+              _.label = op[1];
+              break;
+            }
+            if (op[0] === 6 && _.label < t[1]) {
+              _.label = t[1];
+              t = op;
+              break;
+            }
+            if (t && _.label < t[2]) {
+              _.label = t[2];
+              _.ops.push(op);
+              break;
+            }
+            if (t[2]) _.ops.pop();
+            _.trys.pop();
+            continue;
+        }
+        op = body.call(thisArg, _);
+      } catch (e) {
+        op = [6, e];
+        y = 0;
+      } finally {
+        f = t = 0;
+      }
+    }
+    if (op[0] & 5) throw op[1];
+    return {
+      value: op[0] ? op[1] : void 0,
+      done: true
+    };
+  }
+};
+
+var favCoins = ['bitcoin', 'ethereum', 'tether', 'binancecoin', 'ripple', 'cardano', 'solana', 'dogecoin', 'polkadot', 'shiba-inu', 'tron', 'avalanche-2', 'litecoin', 'bittorrent', 'neo', 'fantom'];
+var emailRegex = /^([^\W])([A-Za-z0-9\.\_]+)\@([a-zA-Z]{4,6})\.([a-zA-Z]{2,3})$/;
+var passwordRegex = /^([0-9A-Za-z\#\$\@\*\!]{8,16})$/;
+var emailValidation = function emailValidation(data, email) {
+  return data.some(function (user) {
+    return user[1].email === email.trim();
+  });
+};
+var checkEmail = function checkEmail(email) {
+  return __awaiter(void 0, void 0, void 0, function () {
+    var data, err_1;
+    return __generator(this, function (_a) {
+      switch (_a.label) {
+        case 0:
+          _a.trys.push([0, 2,, 3]);
+          return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_0__.ofetch)("https://extension-cdfdf-default-rtdb.firebaseio.com/users.json")];
+        case 1:
+          data = _a.sent();
+          return [2, !emailValidation(Object.entries(data), email)];
+        case 2:
+          err_1 = _a.sent();
+          return [2, true];
+        case 3:
+          return [2];
+      }
+    });
+  });
+};
+var loginValidation = function loginValidation(data, user_info) {
+  return data.some(function (user) {
+    return user[1].email === user_info.email.trim() && user[1].password === user_info.password.trim();
+  });
+};
+var extractUser = function extractUser(data, user_info) {
+  return data.filter(function (user) {
+    return user[1].email === user_info.email && user[1].password === user_info.password;
+  })[0];
+};
+var setCookie = function setCookie(day, id) {
+  var date = new Date();
+  date.setTime(date.getTime() + day * 24 * 60 * 60 * 1000);
+  document.cookie = "token=".concat(id, ";path=/;expires=").concat(date);
+};
+var extractToken = function extractToken() {
+  if (document.cookie.includes('token')) {
+    return document.cookie.slice(document.cookie.indexOf('=') + 1);
+  } else {
+    return undefined;
+  }
+};
+var deleteCookie = function deleteCookie(day) {
+  var date = new Date();
+  date.setTime(date.getTime() - day * 24 * 60 * 60 * 1000);
+  document.cookie = "token=;path=/;expires=".concat(date);
+};
 
 /***/ }),
 
@@ -14333,7 +15340,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676729656089
+      // 1676730874053
       var cssReload = __webpack_require__(/*! ../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14353,7 +15360,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676729655711
+      // 1676730873697
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14373,7 +15380,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676729655706
+      // 1676730873684
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -14393,7 +15400,7 @@ __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
     if(true) {
-      // 1676729655700
+      // 1676730873692
       var cssReload = __webpack_require__(/*! ../../../../node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js */ "./node_modules/mini-css-extract-plugin/dist/hmr/hotModuleReplacement.js")(module.id, {"locals":false});
       module.hot.dispose(cssReload);
       module.hot.accept(undefined, cssReload);
@@ -31493,6 +32500,329 @@ var icons = {
 
 /***/ }),
 
+/***/ "./node_modules/destr/dist/index.mjs":
+/*!*******************************************!*\
+  !*** ./node_modules/destr/dist/index.mjs ***!
+  \*******************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ destr)
+/* harmony export */ });
+const suspectProtoRx = /"(?:_|\\u0{2}5[Ff]){2}(?:p|\\u0{2}70)(?:r|\\u0{2}72)(?:o|\\u0{2}6[Ff])(?:t|\\u0{2}74)(?:o|\\u0{2}6[Ff])(?:_|\\u0{2}5[Ff]){2}"\s*:/;
+const suspectConstructorRx = /"(?:c|\\u0063)(?:o|\\u006[Ff])(?:n|\\u006[Ee])(?:s|\\u0073)(?:t|\\u0074)(?:r|\\u0072)(?:u|\\u0075)(?:c|\\u0063)(?:t|\\u0074)(?:o|\\u006[Ff])(?:r|\\u0072)"\s*:/;
+const JsonSigRx = /^\s*["[{]|^\s*-?\d[\d.]{0,14}\s*$/;
+function jsonParseTransform(key, value) {
+  if (key === "__proto__") {
+    return;
+  }
+  if (key === "constructor" && value && typeof value === "object" && "prototype" in value) {
+    return;
+  }
+  return value;
+}
+function destr(value, options = {}) {
+  if (typeof value !== "string") {
+    return value;
+  }
+  const _lval = value.toLowerCase().trim();
+  if (_lval === "true") {
+    return true;
+  }
+  if (_lval === "false") {
+    return false;
+  }
+  if (_lval === "null") {
+    return null;
+  }
+  if (_lval === "nan") {
+    return Number.NaN;
+  }
+  if (_lval === "infinity") {
+    return Number.POSITIVE_INFINITY;
+  }
+  if (_lval === "undefined") {
+    return void 0;
+  }
+  if (!JsonSigRx.test(value)) {
+    if (options.strict) {
+      throw new SyntaxError("Invalid JSON");
+    }
+    return value;
+  }
+  try {
+    if (suspectProtoRx.test(value) || suspectConstructorRx.test(value)) {
+      return JSON.parse(value, jsonParseTransform);
+    }
+    return JSON.parse(value);
+  } catch (error) {
+    if (options.strict) {
+      throw error;
+    }
+    return value;
+  }
+}
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/ofetch/dist/index.mjs":
+/*!********************************************!*\
+  !*** ./node_modules/ofetch/dist/index.mjs ***!
+  \********************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "$fetch": () => (/* binding */ $fetch),
+/* harmony export */   "FetchError": () => (/* reexport safe */ _shared_ofetch_5cb01515_mjs__WEBPACK_IMPORTED_MODULE_0__.F),
+/* harmony export */   "Headers": () => (/* binding */ Headers),
+/* harmony export */   "createFetch": () => (/* reexport safe */ _shared_ofetch_5cb01515_mjs__WEBPACK_IMPORTED_MODULE_0__.c),
+/* harmony export */   "createFetchError": () => (/* reexport safe */ _shared_ofetch_5cb01515_mjs__WEBPACK_IMPORTED_MODULE_0__.a),
+/* harmony export */   "fetch": () => (/* binding */ fetch),
+/* harmony export */   "ofetch": () => (/* binding */ ofetch)
+/* harmony export */ });
+/* harmony import */ var _shared_ofetch_5cb01515_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/ofetch.5cb01515.mjs */ "./node_modules/ofetch/dist/shared/ofetch.5cb01515.mjs");
+/* harmony import */ var destr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! destr */ "./node_modules/destr/dist/index.mjs");
+
+
+
+
+
+const _globalThis = function() {
+  if (typeof globalThis !== "undefined") {
+    return globalThis;
+  }
+  if (typeof self !== "undefined") {
+    return self;
+  }
+  if (typeof window !== "undefined") {
+    return window;
+  }
+  if (typeof global !== "undefined") {
+    return global;
+  }
+  throw new Error("unable to locate global object");
+}();
+const fetch = _globalThis.fetch || (() => Promise.reject(new Error("[ofetch] global.fetch is not supported!")));
+const Headers = _globalThis.Headers;
+const ofetch = (0,_shared_ofetch_5cb01515_mjs__WEBPACK_IMPORTED_MODULE_0__.c)({ fetch, Headers });
+const $fetch = ofetch;
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/ofetch/dist/shared/ofetch.5cb01515.mjs":
+/*!*************************************************************!*\
+  !*** ./node_modules/ofetch/dist/shared/ofetch.5cb01515.mjs ***!
+  \*************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "F": () => (/* binding */ FetchError),
+/* harmony export */   "a": () => (/* binding */ createFetchError),
+/* harmony export */   "c": () => (/* binding */ createFetch)
+/* harmony export */ });
+/* harmony import */ var destr__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! destr */ "./node_modules/destr/dist/index.mjs");
+/* harmony import */ var ufo__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ufo */ "./node_modules/ufo/dist/index.mjs");
+
+
+
+class FetchError extends Error {
+  constructor() {
+    super(...arguments);
+    this.name = "FetchError";
+  }
+}
+function createFetchError(request, error, response) {
+  let message = "";
+  if (request && response) {
+    message = `${response.status} ${response.statusText} (${request.toString()})`;
+  }
+  if (error) {
+    message = `${error.message} (${message})`;
+  }
+  const fetchError = new FetchError(message);
+  Object.defineProperty(fetchError, "request", { get() {
+    return request;
+  } });
+  Object.defineProperty(fetchError, "response", { get() {
+    return response;
+  } });
+  Object.defineProperty(fetchError, "data", { get() {
+    return response && response._data;
+  } });
+  Object.defineProperty(fetchError, "status", { get() {
+    return response && response.status;
+  } });
+  Object.defineProperty(fetchError, "statusText", { get() {
+    return response && response.statusText;
+  } });
+  Object.defineProperty(fetchError, "statusCode", { get() {
+    return response && response.status;
+  } });
+  Object.defineProperty(fetchError, "statusMessage", { get() {
+    return response && response.statusText;
+  } });
+  return fetchError;
+}
+
+const payloadMethods = new Set(Object.freeze(["PATCH", "POST", "PUT", "DELETE"]));
+function isPayloadMethod(method = "GET") {
+  return payloadMethods.has(method.toUpperCase());
+}
+function isJSONSerializable(value) {
+  if (value === void 0) {
+    return false;
+  }
+  const t = typeof value;
+  if (t === "string" || t === "number" || t === "boolean" || t === null) {
+    return true;
+  }
+  if (t !== "object") {
+    return false;
+  }
+  if (Array.isArray(value)) {
+    return true;
+  }
+  return value.constructor && value.constructor.name === "Object" || typeof value.toJSON === "function";
+}
+const textTypes = /* @__PURE__ */ new Set([
+  "image/svg",
+  "application/xml",
+  "application/xhtml",
+  "application/html"
+]);
+const JSON_RE = /^application\/(?:[\w!#$%&*.^`~-]*\+)?json(;.+)?$/i;
+function detectResponseType(_contentType = "") {
+  if (!_contentType) {
+    return "json";
+  }
+  const contentType = _contentType.split(";").shift();
+  if (JSON_RE.test(contentType)) {
+    return "json";
+  }
+  if (textTypes.has(contentType) || contentType.startsWith("text/")) {
+    return "text";
+  }
+  return "blob";
+}
+
+const retryStatusCodes = /* @__PURE__ */ new Set([
+  408,
+  409,
+  425,
+  429,
+  500,
+  502,
+  503,
+  504
+]);
+function createFetch(globalOptions) {
+  const { fetch, Headers } = globalOptions;
+  function onError(context) {
+    const isAbort = context.error && context.error.name === "AbortError" || false;
+    if (context.options.retry !== false && !isAbort) {
+      const retries = typeof context.options.retry === "number" ? context.options.retry : isPayloadMethod(context.options.method) ? 0 : 1;
+      const responseCode = context.response && context.response.status || 500;
+      if (retries > 0 && retryStatusCodes.has(responseCode)) {
+        return $fetchRaw(context.request, {
+          ...context.options,
+          retry: retries - 1
+        });
+      }
+    }
+    const error = createFetchError(context.request, context.error, context.response);
+    if (Error.captureStackTrace) {
+      Error.captureStackTrace(error, $fetchRaw);
+    }
+    throw error;
+  }
+  const $fetchRaw = async function $fetchRaw2(_request, _options = {}) {
+    const context = {
+      request: _request,
+      options: { ...globalOptions.defaults, ..._options },
+      response: void 0,
+      error: void 0
+    };
+    if (context.options.onRequest) {
+      await context.options.onRequest(context);
+    }
+    if (typeof context.request === "string") {
+      if (context.options.baseURL) {
+        context.request = (0,ufo__WEBPACK_IMPORTED_MODULE_1__.withBase)(context.request, context.options.baseURL);
+      }
+      if (context.options.query || context.options.params) {
+        context.request = (0,ufo__WEBPACK_IMPORTED_MODULE_1__.withQuery)(context.request, { ...context.options.params, ...context.options.query });
+      }
+      if (context.options.body && isPayloadMethod(context.options.method) && isJSONSerializable(context.options.body)) {
+        context.options.body = typeof context.options.body === "string" ? context.options.body : JSON.stringify(context.options.body);
+        context.options.headers = new Headers(context.options.headers);
+        if (!context.options.headers.has("content-type")) {
+          context.options.headers.set("content-type", "application/json");
+        }
+        if (!context.options.headers.has("accept")) {
+          context.options.headers.set("accept", "application/json");
+        }
+      }
+    }
+    context.response = await fetch(context.request, context.options).catch(async (error) => {
+      context.error = error;
+      if (context.options.onRequestError) {
+        await context.options.onRequestError(context);
+      }
+      return onError(context);
+    });
+    const responseType = (context.options.parseResponse ? "json" : context.options.responseType) || detectResponseType(context.response.headers.get("content-type") || "");
+    if (responseType === "json") {
+      const data = await context.response.text();
+      const parseFunction = context.options.parseResponse || destr__WEBPACK_IMPORTED_MODULE_0__["default"];
+      context.response._data = parseFunction(data);
+    } else if (responseType === "stream") {
+      context.response._data = context.response.body;
+    } else {
+      context.response._data = await context.response[responseType]();
+    }
+    if (context.options.onResponse) {
+      await context.options.onResponse(context);
+    }
+    if (context.response.status >= 400 && context.response.status < 600) {
+      if (context.options.onResponseError) {
+        await context.options.onResponseError(context);
+      }
+      return onError(context);
+    }
+    return context.response;
+  };
+  const $fetch = function $fetch2(request, options) {
+    return $fetchRaw(request, options).then((r) => r._data);
+  };
+  $fetch.raw = $fetchRaw;
+  $fetch.native = fetch;
+  $fetch.create = (defaultOptions = {}) => createFetch({
+    ...globalOptions,
+    defaults: {
+      ...globalOptions.defaults,
+      ...defaultOptions
+    }
+  });
+  return $fetch;
+}
+
+
+
+
+/***/ }),
+
 /***/ "./node_modules/pinia/dist/pinia.mjs":
 /*!*******************************************!*\
   !*** ./node_modules/pinia/dist/pinia.mjs ***!
@@ -33698,6 +35028,518 @@ function del(target, key) {
   delete target[key]
 }
 
+
+
+
+
+/***/ }),
+
+/***/ "./node_modules/ufo/dist/index.mjs":
+/*!*****************************************!*\
+  !*** ./node_modules/ufo/dist/index.mjs ***!
+  \*****************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "$URL": () => (/* binding */ $URL),
+/* harmony export */   "cleanDoubleSlashes": () => (/* binding */ cleanDoubleSlashes),
+/* harmony export */   "createURL": () => (/* binding */ createURL),
+/* harmony export */   "decode": () => (/* binding */ decode),
+/* harmony export */   "decodePath": () => (/* binding */ decodePath),
+/* harmony export */   "decodeQueryValue": () => (/* binding */ decodeQueryValue),
+/* harmony export */   "encode": () => (/* binding */ encode),
+/* harmony export */   "encodeHash": () => (/* binding */ encodeHash),
+/* harmony export */   "encodeHost": () => (/* binding */ encodeHost),
+/* harmony export */   "encodeParam": () => (/* binding */ encodeParam),
+/* harmony export */   "encodePath": () => (/* binding */ encodePath),
+/* harmony export */   "encodeQueryItem": () => (/* binding */ encodeQueryItem),
+/* harmony export */   "encodeQueryKey": () => (/* binding */ encodeQueryKey),
+/* harmony export */   "encodeQueryValue": () => (/* binding */ encodeQueryValue),
+/* harmony export */   "getQuery": () => (/* binding */ getQuery),
+/* harmony export */   "hasLeadingSlash": () => (/* binding */ hasLeadingSlash),
+/* harmony export */   "hasProtocol": () => (/* binding */ hasProtocol),
+/* harmony export */   "hasTrailingSlash": () => (/* binding */ hasTrailingSlash),
+/* harmony export */   "isEmptyURL": () => (/* binding */ isEmptyURL),
+/* harmony export */   "isEqual": () => (/* binding */ isEqual),
+/* harmony export */   "isNonEmptyURL": () => (/* binding */ isNonEmptyURL),
+/* harmony export */   "isRelative": () => (/* binding */ isRelative),
+/* harmony export */   "isSamePath": () => (/* binding */ isSamePath),
+/* harmony export */   "joinURL": () => (/* binding */ joinURL),
+/* harmony export */   "normalizeURL": () => (/* binding */ normalizeURL),
+/* harmony export */   "parseAuth": () => (/* binding */ parseAuth),
+/* harmony export */   "parseHost": () => (/* binding */ parseHost),
+/* harmony export */   "parsePath": () => (/* binding */ parsePath),
+/* harmony export */   "parseQuery": () => (/* binding */ parseQuery),
+/* harmony export */   "parseURL": () => (/* binding */ parseURL),
+/* harmony export */   "resolveURL": () => (/* binding */ resolveURL),
+/* harmony export */   "stringifyParsedURL": () => (/* binding */ stringifyParsedURL),
+/* harmony export */   "stringifyQuery": () => (/* binding */ stringifyQuery),
+/* harmony export */   "withBase": () => (/* binding */ withBase),
+/* harmony export */   "withHttp": () => (/* binding */ withHttp),
+/* harmony export */   "withHttps": () => (/* binding */ withHttps),
+/* harmony export */   "withLeadingSlash": () => (/* binding */ withLeadingSlash),
+/* harmony export */   "withProtocol": () => (/* binding */ withProtocol),
+/* harmony export */   "withQuery": () => (/* binding */ withQuery),
+/* harmony export */   "withTrailingSlash": () => (/* binding */ withTrailingSlash),
+/* harmony export */   "withoutBase": () => (/* binding */ withoutBase),
+/* harmony export */   "withoutLeadingSlash": () => (/* binding */ withoutLeadingSlash),
+/* harmony export */   "withoutProtocol": () => (/* binding */ withoutProtocol),
+/* harmony export */   "withoutTrailingSlash": () => (/* binding */ withoutTrailingSlash)
+/* harmony export */ });
+const n = /[^\0-\x7E]/;
+const t = /[\x2E\u3002\uFF0E\uFF61]/g;
+const o = { overflow: "Overflow Error", "not-basic": "Illegal Input", "invalid-input": "Invalid Input" };
+const e = Math.floor;
+const r = String.fromCharCode;
+function s(n2) {
+  throw new RangeError(o[n2]);
+}
+const c = function(n2, t2) {
+  return n2 + 22 + 75 * (n2 < 26) - ((t2 != 0) << 5);
+};
+const u = function(n2, t2, o2) {
+  let r2 = 0;
+  for (n2 = o2 ? e(n2 / 700) : n2 >> 1, n2 += e(n2 / t2); n2 > 455; r2 += 36) {
+    n2 = e(n2 / 35);
+  }
+  return e(r2 + 36 * n2 / (n2 + 38));
+};
+function toASCII(o2) {
+  return function(n2, o3) {
+    const e2 = n2.split("@");
+    let r2 = "";
+    e2.length > 1 && (r2 = e2[0] + "@", n2 = e2[1]);
+    const s2 = function(n3, t2) {
+      const o4 = [];
+      let e3 = n3.length;
+      for (; e3--; ) {
+        o4[e3] = t2(n3[e3]);
+      }
+      return o4;
+    }((n2 = n2.replace(t, ".")).split("."), o3).join(".");
+    return r2 + s2;
+  }(o2, function(t2) {
+    return n.test(t2) ? "xn--" + function(n2) {
+      const t3 = [];
+      const o3 = (n2 = function(n3) {
+        const t4 = [];
+        let o4 = 0;
+        const e2 = n3.length;
+        for (; o4 < e2; ) {
+          const r2 = n3.charCodeAt(o4++);
+          if (r2 >= 55296 && r2 <= 56319 && o4 < e2) {
+            const e3 = n3.charCodeAt(o4++);
+            (64512 & e3) == 56320 ? t4.push(((1023 & r2) << 10) + (1023 & e3) + 65536) : (t4.push(r2), o4--);
+          } else {
+            t4.push(r2);
+          }
+        }
+        return t4;
+      }(n2)).length;
+      let f = 128;
+      let i = 0;
+      let l = 72;
+      for (const o4 of n2) {
+        o4 < 128 && t3.push(r(o4));
+      }
+      const h = t3.length;
+      let p = h;
+      for (h && t3.push("-"); p < o3; ) {
+        let o4 = 2147483647;
+        for (const t4 of n2) {
+          t4 >= f && t4 < o4 && (o4 = t4);
+        }
+        const a = p + 1;
+        o4 - f > e((2147483647 - i) / a) && s("overflow"), i += (o4 - f) * a, f = o4;
+        for (const o5 of n2) {
+          if (o5 < f && ++i > 2147483647 && s("overflow"), o5 == f) {
+            let n3 = i;
+            for (let o6 = 36; ; o6 += 36) {
+              const s2 = o6 <= l ? 1 : o6 >= l + 26 ? 26 : o6 - l;
+              if (n3 < s2) {
+                break;
+              }
+              const u2 = n3 - s2;
+              const f2 = 36 - s2;
+              t3.push(r(c(s2 + u2 % f2, 0))), n3 = e(u2 / f2);
+            }
+            t3.push(r(c(n3, 0))), l = u(i, a, p == h), i = 0, ++p;
+          }
+        }
+        ++i, ++f;
+      }
+      return t3.join("");
+    }(t2) : t2;
+  });
+}
+
+const HASH_RE = /#/g;
+const AMPERSAND_RE = /&/g;
+const SLASH_RE = /\//g;
+const EQUAL_RE = /=/g;
+const IM_RE = /\?/g;
+const PLUS_RE = /\+/g;
+const ENC_BRACKET_OPEN_RE = /%5b/gi;
+const ENC_BRACKET_CLOSE_RE = /%5d/gi;
+const ENC_CARET_RE = /%5e/gi;
+const ENC_BACKTICK_RE = /%60/gi;
+const ENC_CURLY_OPEN_RE = /%7b/gi;
+const ENC_PIPE_RE = /%7c/gi;
+const ENC_CURLY_CLOSE_RE = /%7d/gi;
+const ENC_SPACE_RE = /%20/gi;
+const ENC_SLASH_RE = /%2f/gi;
+const ENC_ENC_SLASH_RE = /%252f/gi;
+function encode(text) {
+  return encodeURI("" + text).replace(ENC_PIPE_RE, "|").replace(ENC_BRACKET_OPEN_RE, "[").replace(ENC_BRACKET_CLOSE_RE, "]");
+}
+function encodeHash(text) {
+  return encode(text).replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
+}
+function encodeQueryValue(text) {
+  return encode(text).replace(PLUS_RE, "%2B").replace(ENC_SPACE_RE, "+").replace(HASH_RE, "%23").replace(AMPERSAND_RE, "%26").replace(ENC_BACKTICK_RE, "`").replace(ENC_CURLY_OPEN_RE, "{").replace(ENC_CURLY_CLOSE_RE, "}").replace(ENC_CARET_RE, "^");
+}
+function encodeQueryKey(text) {
+  return encodeQueryValue(text).replace(EQUAL_RE, "%3D");
+}
+function encodePath(text) {
+  return encode(text).replace(HASH_RE, "%23").replace(IM_RE, "%3F").replace(ENC_ENC_SLASH_RE, "%2F").replace(AMPERSAND_RE, "%26").replace(PLUS_RE, "%2B");
+}
+function encodeParam(text) {
+  return encodePath(text).replace(SLASH_RE, "%2F");
+}
+function decode(text = "") {
+  try {
+    return decodeURIComponent("" + text);
+  } catch {
+    return "" + text;
+  }
+}
+function decodePath(text) {
+  return decode(text.replace(ENC_SLASH_RE, "%252F"));
+}
+function decodeQueryValue(text) {
+  return decode(text.replace(PLUS_RE, " "));
+}
+function encodeHost(name = "") {
+  return toASCII(name);
+}
+
+function parseQuery(parametersString = "") {
+  const object = {};
+  if (parametersString[0] === "?") {
+    parametersString = parametersString.slice(1);
+  }
+  for (const parameter of parametersString.split("&")) {
+    const s = parameter.match(/([^=]+)=?(.*)/) || [];
+    if (s.length < 2) {
+      continue;
+    }
+    const key = decode(s[1]);
+    if (key === "__proto__" || key === "constructor") {
+      continue;
+    }
+    const value = decodeQueryValue(s[2] || "");
+    if (typeof object[key] !== "undefined") {
+      if (Array.isArray(object[key])) {
+        object[key].push(value);
+      } else {
+        object[key] = [object[key], value];
+      }
+    } else {
+      object[key] = value;
+    }
+  }
+  return object;
+}
+function encodeQueryItem(key, value) {
+  if (typeof value === "number" || typeof value === "boolean") {
+    value = String(value);
+  }
+  if (!value) {
+    return encodeQueryKey(key);
+  }
+  if (Array.isArray(value)) {
+    return value.map((_value) => `${encodeQueryKey(key)}=${encodeQueryValue(_value)}`).join("&");
+  }
+  return `${encodeQueryKey(key)}=${encodeQueryValue(value)}`;
+}
+function stringifyQuery(query) {
+  return Object.keys(query).filter((k) => query[k] !== void 0).map((k) => encodeQueryItem(k, query[k])).join("&");
+}
+
+class $URL {
+  constructor(input = "") {
+    this.query = {};
+    if (typeof input !== "string") {
+      throw new TypeError(`URL input should be string received ${typeof input} (${input})`);
+    }
+    const parsed = parseURL(input);
+    this.protocol = decode(parsed.protocol);
+    this.host = decode(parsed.host);
+    this.auth = decode(parsed.auth);
+    this.pathname = decodePath(parsed.pathname);
+    this.query = parseQuery(parsed.search);
+    this.hash = decode(parsed.hash);
+  }
+  get hostname() {
+    return parseHost(this.host).hostname;
+  }
+  get port() {
+    return parseHost(this.host).port || "";
+  }
+  get username() {
+    return parseAuth(this.auth).username;
+  }
+  get password() {
+    return parseAuth(this.auth).password || "";
+  }
+  get hasProtocol() {
+    return this.protocol.length;
+  }
+  get isAbsolute() {
+    return this.hasProtocol || this.pathname[0] === "/";
+  }
+  get search() {
+    const q = stringifyQuery(this.query);
+    return q.length > 0 ? "?" + q : "";
+  }
+  get searchParams() {
+    const p = new URLSearchParams();
+    for (const name in this.query) {
+      const value = this.query[name];
+      if (Array.isArray(value)) {
+        for (const v of value) {
+          p.append(name, v);
+        }
+      } else {
+        p.append(name, value || "");
+      }
+    }
+    return p;
+  }
+  get origin() {
+    return (this.protocol ? this.protocol + "//" : "") + encodeHost(this.host);
+  }
+  get fullpath() {
+    return encodePath(this.pathname) + this.search + encodeHash(this.hash);
+  }
+  get encodedAuth() {
+    if (!this.auth) {
+      return "";
+    }
+    const { username, password } = parseAuth(this.auth);
+    return encodeURIComponent(username) + (password ? ":" + encodeURIComponent(password) : "");
+  }
+  get href() {
+    const auth = this.encodedAuth;
+    const originWithAuth = (this.protocol ? this.protocol + "//" : "") + (auth ? auth + "@" : "") + encodeHost(this.host);
+    return this.hasProtocol && this.isAbsolute ? originWithAuth + this.fullpath : this.fullpath;
+  }
+  append(url) {
+    if (url.hasProtocol) {
+      throw new Error("Cannot append a URL with protocol");
+    }
+    Object.assign(this.query, url.query);
+    if (url.pathname) {
+      this.pathname = withTrailingSlash(this.pathname) + withoutLeadingSlash(url.pathname);
+    }
+    if (url.hash) {
+      this.hash = url.hash;
+    }
+  }
+  toJSON() {
+    return this.href;
+  }
+  toString() {
+    return this.href;
+  }
+}
+
+function isRelative(inputString) {
+  return ["./", "../"].some((string_) => inputString.startsWith(string_));
+}
+const PROTOCOL_REGEX = /^\w{2,}:(\/\/)?/;
+const PROTOCOL_RELATIVE_REGEX = /^\/\/[^/]+/;
+function hasProtocol(inputString, acceptProtocolRelative = false) {
+  return PROTOCOL_REGEX.test(inputString) || acceptProtocolRelative && PROTOCOL_RELATIVE_REGEX.test(inputString);
+}
+const TRAILING_SLASH_RE = /\/$|\/\?/;
+function hasTrailingSlash(input = "", queryParameters = false) {
+  if (!queryParameters) {
+    return input.endsWith("/");
+  }
+  return TRAILING_SLASH_RE.test(input);
+}
+function withoutTrailingSlash(input = "", queryParameters = false) {
+  if (!queryParameters) {
+    return (hasTrailingSlash(input) ? input.slice(0, -1) : input) || "/";
+  }
+  if (!hasTrailingSlash(input, true)) {
+    return input || "/";
+  }
+  const [s0, ...s] = input.split("?");
+  return (s0.slice(0, -1) || "/") + (s.length > 0 ? `?${s.join("?")}` : "");
+}
+function withTrailingSlash(input = "", queryParameters = false) {
+  if (!queryParameters) {
+    return input.endsWith("/") ? input : input + "/";
+  }
+  if (hasTrailingSlash(input, true)) {
+    return input || "/";
+  }
+  const [s0, ...s] = input.split("?");
+  return s0 + "/" + (s.length > 0 ? `?${s.join("?")}` : "");
+}
+function hasLeadingSlash(input = "") {
+  return input.startsWith("/");
+}
+function withoutLeadingSlash(input = "") {
+  return (hasLeadingSlash(input) ? input.slice(1) : input) || "/";
+}
+function withLeadingSlash(input = "") {
+  return hasLeadingSlash(input) ? input : "/" + input;
+}
+function cleanDoubleSlashes(input = "") {
+  return input.split("://").map((string_) => string_.replace(/\/{2,}/g, "/")).join("://");
+}
+function withBase(input, base) {
+  if (isEmptyURL(base) || hasProtocol(input)) {
+    return input;
+  }
+  const _base = withoutTrailingSlash(base);
+  if (input.startsWith(_base)) {
+    return input;
+  }
+  return joinURL(_base, input);
+}
+function withoutBase(input, base) {
+  if (isEmptyURL(base)) {
+    return input;
+  }
+  const _base = withoutTrailingSlash(base);
+  if (!input.startsWith(_base)) {
+    return input;
+  }
+  const trimmed = input.slice(_base.length);
+  return trimmed[0] === "/" ? trimmed : "/" + trimmed;
+}
+function withQuery(input, query) {
+  const parsed = parseURL(input);
+  const mergedQuery = { ...parseQuery(parsed.search), ...query };
+  parsed.search = stringifyQuery(mergedQuery);
+  return stringifyParsedURL(parsed);
+}
+function getQuery(input) {
+  return parseQuery(parseURL(input).search);
+}
+function isEmptyURL(url) {
+  return !url || url === "/";
+}
+function isNonEmptyURL(url) {
+  return url && url !== "/";
+}
+function joinURL(base, ...input) {
+  let url = base || "";
+  for (const index of input.filter((url2) => isNonEmptyURL(url2))) {
+    url = url ? withTrailingSlash(url) + withoutLeadingSlash(index) : index;
+  }
+  return url;
+}
+function withHttp(input) {
+  return withProtocol(input, "http://");
+}
+function withHttps(input) {
+  return withProtocol(input, "https://");
+}
+function withoutProtocol(input) {
+  return withProtocol(input, "");
+}
+function withProtocol(input, protocol) {
+  const match = input.match(PROTOCOL_REGEX);
+  if (!match) {
+    return protocol + input;
+  }
+  return protocol + input.slice(match[0].length);
+}
+function createURL(input) {
+  return new $URL(input);
+}
+function normalizeURL(input) {
+  return createURL(input).toString();
+}
+function resolveURL(base, ...input) {
+  const url = createURL(base);
+  for (const index of input.filter((url2) => isNonEmptyURL(url2))) {
+    url.append(createURL(index));
+  }
+  return url.toString();
+}
+function isSamePath(p1, p2) {
+  return decode(withoutTrailingSlash(p1)) === decode(withoutTrailingSlash(p2));
+}
+function isEqual(a, b, options = {}) {
+  if (!options.trailingSlash) {
+    a = withTrailingSlash(a);
+    b = withTrailingSlash(b);
+  }
+  if (!options.leadingSlash) {
+    a = withLeadingSlash(a);
+    b = withLeadingSlash(b);
+  }
+  if (!options.encoding) {
+    a = decode(a);
+    b = decode(b);
+  }
+  return a === b;
+}
+
+function parseURL(input = "", defaultProto) {
+  if (!hasProtocol(input, true)) {
+    return defaultProto ? parseURL(defaultProto + input) : parsePath(input);
+  }
+  const [protocol = "", auth, hostAndPath = ""] = (input.replace(/\\/g, "/").match(/([^/:]+:)?\/\/([^/@]+@)?(.*)/) || []).splice(1);
+  const [host = "", path = ""] = (hostAndPath.match(/([^#/?]*)(.*)?/) || []).splice(1);
+  const { pathname, search, hash } = parsePath(path.replace(/\/(?=[A-Za-z]:)/, ""));
+  return {
+    protocol,
+    auth: auth ? auth.slice(0, Math.max(0, auth.length - 1)) : "",
+    host,
+    pathname,
+    search,
+    hash
+  };
+}
+function parsePath(input = "") {
+  const [pathname = "", search = "", hash = ""] = (input.match(/([^#?]*)(\?[^#]*)?(#.*)?/) || []).splice(1);
+  return {
+    pathname,
+    search,
+    hash
+  };
+}
+function parseAuth(input = "") {
+  const [username, password] = input.split(":");
+  return {
+    username: decode(username),
+    password: decode(password)
+  };
+}
+function parseHost(input = "") {
+  const [hostname, port] = (input.match(/([^/]*)(:0-9+)?/) || []).splice(1);
+  return {
+    hostname: decode(hostname),
+    port
+  };
+}
+function stringifyParsedURL(parsed) {
+  const fullpath = parsed.pathname + (parsed.search ? (parsed.search.startsWith("?") ? "" : "?") + parsed.search : "") + parsed.hash;
+  if (!parsed.protocol) {
+    return fullpath;
+  }
+  return parsed.protocol + "//" + (parsed.auth ? parsed.auth + "@" : "") + parsed.host + fullpath;
+}
 
 
 
@@ -37461,7 +39303,7 @@ function useRoute() {
 /******/ 	
 /******/ 	/* webpack/runtime/getFullHash */
 /******/ 	(() => {
-/******/ 		__webpack_require__.h = () => ("bbc55514459753edd257")
+/******/ 		__webpack_require__.h = () => ("2f8c1f76b787ea9b4ad3")
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/global */

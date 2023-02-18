@@ -3,6 +3,9 @@ import './assets/styles/Tailwind.config/Tailwind.base.scss'
 import './assets/styles/Tailwind.config/Tailwind.component.scss'
 import './assets/styles/Tailwind.config/Tailwind.utilities.scss'
 
+/////// auto login
+import auth from "./plugins/auth";
+
 //////////// fontawesome
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -29,4 +32,5 @@ const app=createApp(App)
 app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(createPinia())
 app.use(router)
+app.use(auth)
 app.mount('#app')

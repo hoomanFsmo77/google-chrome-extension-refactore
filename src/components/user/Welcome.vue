@@ -22,7 +22,7 @@
 import {useUserIndex} from "../../composables";
 const {userStore}=useUserIndex()
 const logoutHandler = () => {
-  userStore.triggerLogout()
+  userStore.resetUser()
 }
 
 

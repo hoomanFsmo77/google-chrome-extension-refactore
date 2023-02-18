@@ -33,8 +33,12 @@ export const setCookie:SetCookie=(day:number,id:string)=>{
     date.setTime(date.getTime() + (day *24*60*60*1000))
     document.cookie=`token=${id};path=/;expires=${date}`
 }
-export const extractToken=()=>{
-    return document.cookie.slice(document.cookie.indexOf('=')+1)
+export const extractToken=():string|undefined=>{
+    if(document.cookie.includes('token')){
+        return document.cookie.slice(document.cookie.indexOf('=')+1)
+    }else{
+        return  undefined
+    }
 }
 export const deleteCookie=(day:number)=>{
     let date=new Date()
