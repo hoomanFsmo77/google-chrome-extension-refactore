@@ -6,7 +6,8 @@ import {loginValidation, setCookie,extractUser} from "../utils/Helper";
 export const useUserStore=defineStore('user',{
     state:():User_Store=>{
         return {
-            loginStatus:false,
+            loginStatus:true,
+            favCoins:[],
             signUpFetchFlag:false,
             signInErrorFlag:false,
             email:undefined
@@ -15,6 +16,9 @@ export const useUserStore=defineStore('user',{
     getters:{
         getLoginStatus(state){
             return state.loginStatus
+        },
+        getFavCoinLength(state):number{
+            return state.favCoins.length
         }
     },
     actions:{

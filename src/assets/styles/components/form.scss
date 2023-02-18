@@ -12,13 +12,17 @@
   .btn-warning{
     @apply bg-amber-500 text-light hover:shadow-amber-500
   }
+  .btn-indigo{
+    @apply bg-indigo-500 text-light hover:shadow-indigo-500
+
+  }
   .btn-sm{
     @apply !text-0.9 ;
   }
   .btn-dark{
     @apply text-light bg-dark hover:shadow-dark
   }
-  .input[type=text],.input[type=password]{
+  .input[type=text],.input[type=password],.input[type=number]{
       @apply w-full border-[1px] border-gray-300 rounded-8 my-1 bg-light p-0.7 focus:!border-[1px] focus:!border-gray-300 focus:ring-2 focus:ring-primary/50 transition-all focus:shadow-[0_0_30px] focus:shadow-primary/10
   }
 

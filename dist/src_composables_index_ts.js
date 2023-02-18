@@ -50,11 +50,19 @@ var useUserIndex = function useUserIndex() {
   var signInErrorFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
     return userStore.signInErrorFlag;
   });
+  var userEmail = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.email;
+  });
+  var favCoinLength = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.getFavCoinLength;
+  });
   return {
     loginStatus: loginStatus,
     userStore: userStore,
     signUpFetchFlag: signUpFetchFlag,
-    signInErrorFlag: signInErrorFlag
+    signInErrorFlag: signInErrorFlag,
+    userEmail: userEmail,
+    favCoinLength: favCoinLength
   };
 };
 var useSearchIndex = function useSearchIndex() {
@@ -646,7 +654,8 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
   state: function state() {
     return {
-      loginStatus: false,
+      loginStatus: true,
+      favCoins: [],
       signUpFetchFlag: false,
       signInErrorFlag: false,
       email: undefined
@@ -655,6 +664,9 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
   getters: {
     getLoginStatus: function getLoginStatus(state) {
       return state.loginStatus;
+    },
+    getFavCoinLength: function getFavCoinLength(state) {
+      return state.favCoins.length;
     }
   },
   actions: {

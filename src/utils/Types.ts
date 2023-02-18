@@ -18,6 +18,7 @@ export interface User_Store {
     loginStatus:boolean,
     signUpFetchFlag:boolean,
     signInErrorFlag:boolean,
+    favCoins:string[],
     email:string|undefined
 }
 export interface User_Info {
