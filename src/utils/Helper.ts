@@ -1,4 +1,4 @@
-import {EmailValidation,CheckEmail} from "./Types";
+import {EmailValidation, CheckEmail, User_Info, SetCookie, LoginValidation, ExtractUser} from "./Types";
 import {ofetch} from "ofetch";
 export let favCoins=['bitcoin','ethereum','tether','binancecoin','ripple','cardano','solana','dogecoin','polkadot','shiba-inu','tron','avalanche-2','litecoin','bittorrent','neo','fantom']
 
@@ -19,8 +19,16 @@ export const checkEmail:CheckEmail = async (email:string):Promise<boolean> => {
         return  true
     }
 }
+export const loginValidation:LoginValidation = (data:any[],user_info:User_Info):boolean => {
+    return data.some(user=>{
+        return user[1].email===user_info.email.trim() && user[1].password===user_info.password.trim()
+    })
+}
+export const extractUser:ExtractUser = (data:any[],user_info:User_Info) => {
+   return  data.filter(user=> user[1].email===user_info.email && user[1].password===user_info.password)[0]
+}
 
-export const setCookie=(day:number,id:string)=>{
+export const setCookie:SetCookie=(day:number,id:string)=>{
     let date=new Date()
     date.setTime(date.getTime() + (day *24*60*60*1000))
     document.cookie=`token=${id};path=/;expires=${date}`

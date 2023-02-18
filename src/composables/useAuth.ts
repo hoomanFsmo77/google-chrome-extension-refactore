@@ -16,12 +16,20 @@ export const useAuth=()=>{
 }
 
 export const useSignIn=()=>{
+    const {userStore}=useUserIndex()
 
+    const user_info=reactive<User_Info>({
+        email:'hoomanmousavi77@gmail.com',
+        password:'13777731Ho@'
+    })
 
+    const signInTrigger = () => {
+         userStore.triggerSignIn(user_info)
+    }
 
 
     return{
-
+        signInTrigger,user_info
     }
 }
 

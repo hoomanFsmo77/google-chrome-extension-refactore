@@ -22,8 +22,9 @@ export const usePopularIndex=()=>{
 export const useUserIndex=()=>{
     const userStore=useUserStore()
     const loginStatus=computed<boolean>(()=>userStore.getLoginStatus)
-    const loginFetchFlag=computed<boolean>(()=>userStore.loginFetchFlag)
-    return{loginStatus,userStore,loginFetchFlag}
+    const signUpFetchFlag=computed<boolean>(()=>userStore.signUpFetchFlag)
+    const signInErrorFlag=computed<boolean>(()=>userStore.signInErrorFlag)
+    return{loginStatus,userStore,signUpFetchFlag,signInErrorFlag}
 }
 
 export const useSearchIndex=()=>{

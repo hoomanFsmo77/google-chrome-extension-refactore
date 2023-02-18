@@ -120,6 +120,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
 /* harmony import */ var src_composables_useAuth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/composables/useAuth */ "./src/composables/useAuth.ts");
+/* harmony import */ var _composables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../composables */ "./src/composables/index.ts");
+
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,vue__WEBPACK_IMPORTED_MODULE_0__.defineComponent)({
@@ -127,8 +129,15 @@ __webpack_require__.r(__webpack_exports__);
   setup: function setup(__props, _a) {
     var expose = _a.expose;
     expose();
-    var _b = (0,src_composables_useAuth__WEBPACK_IMPORTED_MODULE_1__.useSignIn)();
-    var __returned__ = {};
+    var _b = (0,src_composables_useAuth__WEBPACK_IMPORTED_MODULE_1__.useSignIn)(),
+      signInTrigger = _b.signInTrigger,
+      user_info = _b.user_info;
+    var signInErrorFlag = (0,_composables__WEBPACK_IMPORTED_MODULE_2__.useUserIndex)().signInErrorFlag;
+    var __returned__ = {
+      signInTrigger: signInTrigger,
+      user_info: user_info,
+      signInErrorFlag: signInErrorFlag
+    };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
       value: true
@@ -164,12 +173,12 @@ __webpack_require__.r(__webpack_exports__);
       signupHandler = _b.signupHandler,
       user_info = _b.user_info,
       errorFlag = _b.errorFlag;
-    var loginFetchFlag = (0,_composables__WEBPACK_IMPORTED_MODULE_1__.useUserIndex)().loginFetchFlag;
+    var signUpFetchFlag = (0,_composables__WEBPACK_IMPORTED_MODULE_1__.useUserIndex)().signUpFetchFlag;
     var __returned__ = {
       signupHandler: signupHandler,
       user_info: user_info,
       errorFlag: errorFlag,
-      loginFetchFlag: loginFetchFlag
+      signUpFetchFlag: signUpFetchFlag
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -323,25 +332,38 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "mt-1.5"
 };
-var _hoisted_2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "text",
-  "class": "input",
-  placeholder: "Email"
-}, null, -1);
-var _hoisted_3 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
-  type: "password",
-  "class": "input",
-  placeholder: "Password"
-}, null, -1);
-var _hoisted_4 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+var _hoisted_2 = (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "btn-primary btn mt-0.5"
 }, " Continue ", -1);
-var _hoisted_5 = [_hoisted_2, _hoisted_3, _hoisted_4];
+var _hoisted_3 = {
+  key: 0,
+  "class": "mt-0.5 text-red-600"
+};
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
     "class": "text-center",
-    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {}, ["prevent"]))
-  }, _hoisted_5, 32)]);
+    onSubmit: _cache[2] || (_cache[2] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      var args = [];
+      for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+      }
+      return $setup.signInTrigger && $setup.signInTrigger.apply($setup, args);
+    }, ["prevent"]))
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[0] || (_cache[0] = function ($event) {
+      return $setup.user_info.email = $event;
+    }),
+    type: "text",
+    "class": "input",
+    placeholder: "Email"
+  }, null, 512), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user_info.email]]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+    "onUpdate:modelValue": _cache[1] || (_cache[1] = function ($event) {
+      return $setup.user_info.password = $event;
+    }),
+    type: "password",
+    "class": "input",
+    placeholder: "Password"
+  }, null, 512), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user_info.password]]), _hoisted_2, $setup.signInErrorFlag ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_3, "There is not any match for your email or password!")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 32)]);
 }
 
 /***/ }),
@@ -404,9 +426,9 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     "class": "input !mb-0.3",
     placeholder: "Password"
   }, null, 512), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $setup.user_info.password]]), _hoisted_3, _hoisted_4]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
-    disabled: $setup.loginFetchFlag,
+    disabled: $setup.signUpFetchFlag,
     "class": "btn-primary btn mt-0.5 mb-1"
-  }, " Continue ", 8, _hoisted_5), $setup.errorFlag ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_6, "Please enter valid email or password!")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.loginFetchFlag ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_7, "connecting to server. please wait...")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 32)]);
+  }, " Continue ", 8, _hoisted_5), $setup.errorFlag ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_6, "Please enter valid email or password!")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), $setup.signUpFetchFlag ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_7, "connecting to server. please wait...")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)], 32)]);
 }
 
 /***/ }),
@@ -580,7 +602,18 @@ var useAuth = function useAuth() {
   };
 };
 var useSignIn = function useSignIn() {
-  return {};
+  var userStore = (0,_index__WEBPACK_IMPORTED_MODULE_2__.useUserIndex)().userStore;
+  var user_info = (0,vue__WEBPACK_IMPORTED_MODULE_1__.reactive)({
+    email: 'hoomanmousavi77@gmail.com',
+    password: '13777731Ho@'
+  });
+  var signInTrigger = function signInTrigger() {
+    userStore.triggerSignIn(user_info);
+  };
+  return {
+    signInTrigger: signInTrigger,
+    user_info: user_info
+  };
 };
 var useSignUp = function useSignUp() {
   var userStore = (0,_index__WEBPACK_IMPORTED_MODULE_2__.useUserIndex)().userStore;

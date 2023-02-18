@@ -16,7 +16,8 @@ export interface Popular_Store {
 //////// user types
 export interface User_Store {
     loginStatus:boolean,
-    loginFetchFlag:boolean,
+    signUpFetchFlag:boolean,
+    signInErrorFlag:boolean,
     email:string|undefined
 }
 export interface User_Info {
@@ -54,3 +55,6 @@ export interface Search_Store {
 //////////// helpers
 export type EmailValidation=(data:any[],email:string)=>boolean;
 export type CheckEmail=(email:string)=>Promise<boolean>
+export type SetCookie=(day:number,id:string)=>void
+export type LoginValidation=(data:any[],user_info:User_Info)=>boolean
+export type ExtractUser=(data:any[],user_info:User_Info)=>Array<any>

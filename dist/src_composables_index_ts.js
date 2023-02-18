@@ -44,13 +44,17 @@ var useUserIndex = function useUserIndex() {
   var loginStatus = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
     return userStore.getLoginStatus;
   });
-  var loginFetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return userStore.loginFetchFlag;
+  var signUpFetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.signUpFetchFlag;
+  });
+  var signInErrorFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
+    return userStore.signInErrorFlag;
   });
   return {
     loginStatus: loginStatus,
     userStore: userStore,
-    loginFetchFlag: loginFetchFlag
+    signUpFetchFlag: signUpFetchFlag,
+    signInErrorFlag: signInErrorFlag
   };
 };
 var useSearchIndex = function useSearchIndex() {
@@ -643,7 +647,8 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
   state: function state() {
     return {
       loginStatus: false,
-      loginFetchFlag: false,
+      signUpFetchFlag: false,
+      signInErrorFlag: false,
       email: undefined
     };
   },
@@ -659,7 +664,7 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
         return __generator(this, function (_a) {
           switch (_a.label) {
             case 0:
-              this.loginFetchFlag = true;
+              this.signUpFetchFlag = true;
               _a.label = 1;
             case 1:
               _a.trys.push([1, 3, 4, 5]);
@@ -682,9 +687,40 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
               console.log(err_1);
               return [3, 5];
             case 4:
-              this.loginFetchFlag = false;
+              this.signUpFetchFlag = false;
               return [7];
             case 5:
+              return [2];
+          }
+        });
+      });
+    },
+    triggerSignIn: function triggerSignIn(user_info) {
+      return __awaiter(this, void 0, void 0, function () {
+        var data, targetUser, e_1;
+        return __generator(this, function (_a) {
+          switch (_a.label) {
+            case 0:
+              this.signInErrorFlag = false;
+              _a.label = 1;
+            case 1:
+              _a.trys.push([1, 3,, 4]);
+              return [4, (0,ofetch__WEBPACK_IMPORTED_MODULE_2__.ofetch)("https://extension-cdfdf-default-rtdb.firebaseio.com/users.json")];
+            case 2:
+              data = _a.sent();
+              this.signInErrorFlag = !(0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.loginValidation)(Object.entries(data), user_info);
+              if (!this.signInErrorFlag) {
+                targetUser = (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.extractUser)(Object.entries(data), user_info);
+                this.email = user_info.email;
+                this.loginStatus = true;
+                (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.setCookie)(10, targetUser[0]);
+              }
+              return [3, 4];
+            case 3:
+              e_1 = _a.sent();
+              this.signInErrorFlag = true;
+              return [3, 4];
+            case 4:
               return [2];
           }
         });
@@ -707,7 +743,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "emailRegex": () => (/* binding */ emailRegex),
 /* harmony export */   "emailValidation": () => (/* binding */ emailValidation),
 /* harmony export */   "extractToken": () => (/* binding */ extractToken),
+/* harmony export */   "extractUser": () => (/* binding */ extractUser),
 /* harmony export */   "favCoins": () => (/* binding */ favCoins),
+/* harmony export */   "loginValidation": () => (/* binding */ loginValidation),
 /* harmony export */   "passwordRegex": () => (/* binding */ passwordRegex),
 /* harmony export */   "setCookie": () => (/* binding */ setCookie)
 /* harmony export */ });
@@ -857,6 +895,16 @@ var checkEmail = function checkEmail(email) {
       }
     });
   });
+};
+var loginValidation = function loginValidation(data, user_info) {
+  return data.some(function (user) {
+    return user[1].email === user_info.email.trim() && user[1].password === user_info.password.trim();
+  });
+};
+var extractUser = function extractUser(data, user_info) {
+  return data.filter(function (user) {
+    return user[1].email === user_info.email && user[1].password === user_info.password;
+  })[0];
 };
 var setCookie = function setCookie(day, id) {
   var date = new Date();
