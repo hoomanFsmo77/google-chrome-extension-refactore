@@ -2,11 +2,12 @@ import {defineStore} from "pinia";
 import {User_Store,User_Info} from "src/utils/Types";
 import {ofetch} from "ofetch";
 import {loginValidation, setCookie,extractUser} from "../utils/Helper";
+import {deleteCookie} from "src/utils/Helper";
 
 export const useUserStore=defineStore('user',{
     state:():User_Store=>{
         return {
-            loginStatus:true,
+            loginStatus:false,
             favCoins:[],
             signUpFetchFlag:false,
             signInErrorFlag:false,
@@ -59,7 +60,13 @@ export const useUserStore=defineStore('user',{
             }
 
 
-         }
+         },
+        triggerLogout(){
+            deleteCookie(10)
+            this.email=undefined
+            this.loginStatus=false
+            this.favCoins=[]
+        }
     }
 
 

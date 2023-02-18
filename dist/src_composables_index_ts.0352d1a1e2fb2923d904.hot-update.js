@@ -1,99 +1,6 @@
 "use strict";
 self["webpackHotUpdatetemplate"]("src_composables_index_ts",{
 
-/***/ "./src/composables/index.ts":
-/*!**********************************!*\
-  !*** ./src/composables/index.ts ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "usePopularIndex": () => (/* binding */ usePopularIndex),
-/* harmony export */   "useSearchIndex": () => (/* binding */ useSearchIndex),
-/* harmony export */   "useUserIndex": () => (/* binding */ useUserIndex)
-/* harmony export */ });
-/* harmony import */ var src_store_popular__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/store/popular */ "./src/store/popular.ts");
-/* harmony import */ var src_store_user__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/store/user */ "./src/store/user.ts");
-/* harmony import */ var _store_search__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../store/search */ "./src/store/search.ts");
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.runtime.esm-bundler.js");
-
-
-
-
-var usePopularIndex = function usePopularIndex() {
-  var popularStore = (0,src_store_popular__WEBPACK_IMPORTED_MODULE_0__.usePopularCoinStore)();
-  var popularCoinLists = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return popularStore.getCoinList;
-  });
-  var fetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return popularStore.getFetchFlag;
-  });
-  var bitcoinPrice = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return popularStore.getBitCoinPrice;
-  });
-  return {
-    popularStore: popularStore,
-    popularCoinLists: popularCoinLists,
-    fetchFlag: fetchFlag,
-    bitcoinPrice: bitcoinPrice
-  };
-};
-var useUserIndex = function useUserIndex() {
-  var userStore = (0,src_store_user__WEBPACK_IMPORTED_MODULE_1__.useUserStore)();
-  var loginStatus = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return userStore.getLoginStatus;
-  });
-  var signUpFetchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return userStore.signUpFetchFlag;
-  });
-  var signInErrorFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return userStore.signInErrorFlag;
-  });
-  var userEmail = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return userStore.email;
-  });
-  var favCoinLength = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return userStore.getFavCoinLength;
-  });
-  return {
-    loginStatus: loginStatus,
-    userStore: userStore,
-    signUpFetchFlag: signUpFetchFlag,
-    signInErrorFlag: signInErrorFlag,
-    userEmail: userEmail,
-    favCoinLength: favCoinLength
-  };
-};
-var useSearchIndex = function useSearchIndex() {
-  var searchStore = (0,_store_search__WEBPACK_IMPORTED_MODULE_2__.useSearchStore)();
-  var searchResult = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return searchStore.searchResult;
-  });
-  var searchFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return searchStore.getSearchFlag;
-  });
-  var searchText = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return searchStore.searchText;
-  });
-  var trendingList = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return searchStore.getTrendingList;
-  });
-  var trendingFlag = (0,vue__WEBPACK_IMPORTED_MODULE_3__.computed)(function () {
-    return searchStore.getTrendingFlag;
-  });
-  return {
-    searchStore: searchStore,
-    searchResult: searchResult,
-    searchFlag: searchFlag,
-    searchText: searchText,
-    trendingList: trendingList,
-    trendingFlag: trendingFlag
-  };
-};
-
-/***/ }),
-
 /***/ "./src/store/user.ts":
 /*!***************************!*\
   !*** ./src/store/user.ts ***!
@@ -106,7 +13,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
 /* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
-/* harmony import */ var _utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/Helper */ "./src/utils/Helper.ts");
+/* harmony import */ var _utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/utils/Helper */ "./src/utils/Helper.ts");
 var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
   function adopt(value) {
     return value instanceof P ? value : new P(function (resolve) {
@@ -227,10 +134,11 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 
+
 var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
   state: function state() {
     return {
-      loginStatus: true,
+      loginStatus: false,
       favCoins: [],
       signUpFetchFlag: false,
       signInErrorFlag: false,
@@ -313,6 +221,12 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
           }
         });
       });
+    },
+    triggerLogout: function triggerLogout() {
+      (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.deleteCookie)(10);
+      this.email = undefined;
+      this.loginStatus = false;
+      this.favCoins = [];
     }
   }
 });
@@ -320,4 +234,4 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
 /***/ })
 
 });
-//# sourceMappingURL=src_composables_index_ts.9295ab03eb2e88026d79.hot-update.js.map
+//# sourceMappingURL=src_composables_index_ts.0352d1a1e2fb2923d904.hot-update.js.map

@@ -19,8 +19,8 @@ export const useSignIn=()=>{
     const {userStore}=useUserIndex()
 
     const user_info=reactive<User_Info>({
-        email:'hoomanmousavi77@gmail.com',
-        password:'13777731Ho@'
+        email:'',
+        password:''
     })
 
     const signInTrigger = () => {
@@ -37,8 +37,8 @@ export const useSignUp=()=>{
     const {userStore}=useUserIndex()
     const errorFlag=ref<boolean>(false)
      const user_info=reactive<User_Info>({
-         email:'hoomanmousavi77@gmail.com',
-         password:'13777731Ho@'
+         email:'',
+         password:''
      })
 
     const signupHandler = async () => {

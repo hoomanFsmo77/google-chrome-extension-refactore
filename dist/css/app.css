@@ -607,6 +607,10 @@ input:focus {
   margin-left: 0.5rem;
 }
 
+.ml-1 {
+  margin-left: 1rem;
+}
+
 .mr-0 {
   margin-right: 0;
 }
@@ -639,10 +643,6 @@ input:focus {
   margin-top: 1.5rem;
 }
 
-.ml-1 {
-  margin-left: 1rem;
-}
-
 .flex {
   display: flex;
 }
@@ -655,16 +655,12 @@ input:focus {
   height: 100%;
 }
 
-.w-full {
-  width: 100%;
-}
-
-.w-\[40\%\] {
-  width: 40%;
-}
-
 .\!w-\[40\%\] {
   width: 40% !important;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .cursor-pointer {
@@ -751,6 +747,10 @@ input:focus {
 
 .p-0\.7 {
   padding: 0.7rem;
+}
+
+.p-1 {
+  padding: 1rem;
 }
 
 .\!px-0 {

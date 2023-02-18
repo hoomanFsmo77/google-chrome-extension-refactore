@@ -530,7 +530,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var pinia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! pinia */ "./node_modules/pinia/dist/pinia.mjs");
 /* harmony import */ var ofetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ofetch */ "./node_modules/ofetch/dist/index.mjs");
-/* harmony import */ var _utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/Helper */ "./src/utils/Helper.ts");
+/* harmony import */ var _utils_Helper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! src/utils/Helper */ "./src/utils/Helper.ts");
 var __awaiter = undefined && undefined.__awaiter || function (thisArg, _arguments, P, generator) {
   function adopt(value) {
     return value instanceof P ? value : new P(function (resolve) {
@@ -651,10 +651,11 @@ var __generator = undefined && undefined.__generator || function (thisArg, body)
 
 
 
+
 var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
   state: function state() {
     return {
-      loginStatus: true,
+      loginStatus: false,
       favCoins: [],
       signUpFetchFlag: false,
       signInErrorFlag: false,
@@ -737,6 +738,12 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
           }
         });
       });
+    },
+    triggerLogout: function triggerLogout() {
+      (0,_utils_Helper__WEBPACK_IMPORTED_MODULE_0__.deleteCookie)(10);
+      this.email = undefined;
+      this.loginStatus = false;
+      this.favCoins = [];
     }
   }
 });
@@ -752,6 +759,7 @@ var useUserStore = (0,pinia__WEBPACK_IMPORTED_MODULE_1__.defineStore)('user', {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "checkEmail": () => (/* binding */ checkEmail),
+/* harmony export */   "deleteCookie": () => (/* binding */ deleteCookie),
 /* harmony export */   "emailRegex": () => (/* binding */ emailRegex),
 /* harmony export */   "emailValidation": () => (/* binding */ emailValidation),
 /* harmony export */   "extractToken": () => (/* binding */ extractToken),
@@ -925,6 +933,11 @@ var setCookie = function setCookie(day, id) {
 };
 var extractToken = function extractToken() {
   return document.cookie.slice(document.cookie.indexOf('=') + 1);
+};
+var deleteCookie = function deleteCookie(day) {
+  var date = new Date();
+  date.setTime(date.getTime() - day * 24 * 60 * 60 * 1000);
+  document.cookie = "token=;path=/;expires=".concat(date);
 };
 
 /***/ })

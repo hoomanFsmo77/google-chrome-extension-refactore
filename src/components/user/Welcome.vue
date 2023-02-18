@@ -7,7 +7,7 @@
       <router-link :to="{name:'index-home'}" class="btn btn-indigo">
         Home
       </router-link>
-      <button class="btn btn-indigo ml-1">
+      <button @click="logoutHandler" class="btn btn-indigo ml-1">
         Log out
       </button>
     </div>
@@ -18,10 +18,16 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: "Wellcome"
+<script setup lang="ts">
+import {useUserIndex} from "../../composables";
+const {userStore}=useUserIndex()
+const logoutHandler = () => {
+  userStore.triggerLogout()
 }
+
+
+
+
 </script>
 
 <style scoped>
