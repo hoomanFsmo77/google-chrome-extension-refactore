@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import {useUserIndex} from "../../composables";
-import {useSignUp} from "src/composables/useAuth";
+import {useSignUp} from "../../composables/useAuth";
 const {signupHandler,user_info,errorFlag}=useSignUp()
 const {signUpFetchFlag}=useUserIndex()
 </script>

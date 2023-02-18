@@ -5,7 +5,7 @@ const routes:RouteRecordRaw[]=[
     {
         path:'',
         name:'index',
-        component:()=>import('./pages/index.vue'),
+        component:()=>import('../pages/index.vue'),
         redirect:{
           name:'index-home'
         },
@@ -13,7 +13,7 @@ const routes:RouteRecordRaw[]=[
             {
                 path:'home',
                 name:'index-home',
-                component:()=>import('./pages/home/index.vue'),
+                component:()=>import('../pages/home/index.vue'),
                 redirect:{
                     name:'index-home-popular'
                 },
@@ -21,25 +21,25 @@ const routes:RouteRecordRaw[]=[
                     {
                         path:'popular',
                         name:'index-home-popular',
-                        component:()=>import('./pages/home/popular.vue')
+                        component:()=>import('../pages/home/popular.vue')
                     },
                     {
                         path:'following',
                         name:'index-home-following',
-                        component:()=>import('./pages/home/following.vue')
+                        component:()=>import('../pages/home/following.vue')
                     },
                 ]
             },
             {
                 path:'user',
                 name:'index-user',
-                component:()=>import('./pages/user/index.vue'),
+                component:()=>import('../pages/user/index.vue'),
 
             },
             {
                 path:'search',
                 name:'index-search',
-                component:()=>import('./pages/search/index.vue'),
+                component:()=>import('../pages/search/index.vue'),
                 redirect:{
                   name:'index-search-trending'
                 },
@@ -47,12 +47,12 @@ const routes:RouteRecordRaw[]=[
                     {
                         name: 'index-search-trending',
                         path: 'trending',
-                        component:()=>import('src/pages/search/Trending.vue')
+                        component:()=>import('../pages/search/Trending.vue')
                     },
                     {
                         name: 'index-search-detail',
                         path: 'detail/:id',
-                        component:()=>import('src/pages/search/Detail.vue'),
+                        component:()=>import('../pages/search/Detail.vue'),
                         props:true
                     },
                 ]

@@ -1,6 +1,6 @@
 <template>
   <section  id="welcome">
-    <img src="../../assets/images/welcome.svg" width="300" alt="">
+    <img src="/images/welcome.svg" width="300" alt="">
     <h4 class="text-primary text-center my-0.5">You're in!</h4>
     <p class="text-1">We're so glad you're here.</p>
     <div class="mt-0.5 ">

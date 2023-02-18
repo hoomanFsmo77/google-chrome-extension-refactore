@@ -12,9 +12,9 @@
 </template>
 
 <script setup lang="ts">
-import SignIn from 'src/components/user/SignIn.vue'
-import SignUp from 'src/components/user/SignUp.vue'
-import {useAuth} from "src/composables/useAuth";
+import SignIn from '../../components/user/SignIn.vue'
+import SignUp from '../../components/user/SignUp.vue'
+import {useAuth} from "../../composables/useAuth";
 const {isLogin,toggleAuthState}=useAuth()
 </script>
 

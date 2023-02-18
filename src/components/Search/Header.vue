@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import CBtn from 'src/components/CBtn.vue'
-import Search from 'src/components/Search/Search.vue'
+import CBtn from '../../components/CBtn.vue'
+import Search from './Search.vue'
 </script>
 
 <style scoped>

@@ -18,9 +18,9 @@
 </template>
 
 <script setup lang="ts">
-import PriceCard from 'src/components/Home/PriceCard.vue'
-import {useHome} from "src/composables/useHome";
-import PLoader from 'src/components/PLoader.vue'
+import PriceCard from '../../components/Home/PriceCard.vue'
+import {useHome} from "../../composables/useHome";
+import PLoader from '../../components/PLoader.vue'
 const {popularCoinLists,fetchFlag}=useHome()
 </script>
 

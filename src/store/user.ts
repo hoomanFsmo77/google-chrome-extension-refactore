@@ -1,8 +1,8 @@
 import {defineStore} from "pinia";
-import {User_Store,User_Info} from "src/utils/Types";
+import {User_Store,User_Info} from "../utils/Types";
 import {ofetch} from "ofetch";
 import {loginValidation, setCookie,extractUser} from "../utils/Helper";
-import {deleteCookie,extractToken} from "src/utils/Helper";
+import {deleteCookie,extractToken} from "../utils/Helper";
 
 export const useUserStore=defineStore('user',{
     state:():User_Store=>{

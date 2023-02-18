@@ -5,10 +5,10 @@
 </template>
 
 <script setup lang="ts">
-import Auth from 'src/components/user/Auth.vue';
-import Welcome from 'src/components/user/Welcome.vue'
-import Header from 'src/components/user/Header.vue'
-import {useUserIndex} from "src/composables";
+import Auth from '../../components/user/Auth.vue';
+import Welcome from '../../components/user/Welcome.vue'
+import Header from '../../components/user/Header.vue'
+import {useUserIndex} from "../../composables";
 const {loginStatus}=useUserIndex()
 
 </script>

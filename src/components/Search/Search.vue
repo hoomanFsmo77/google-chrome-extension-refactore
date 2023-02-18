@@ -6,8 +6,8 @@
 </template>
 
 <script setup lang="ts">
-import SearchBox from 'src/components/form/SearchBox.vue'
-import {useSearch} from "src/composables/useSearch";
+import SearchBox from '../form/SearchBox.vue'
+import {useSearch} from "../../composables/useSearch";
 const {triggerSearch,searchText}=useSearch()
 </script>
 

@@ -6,9 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import Welcome from 'src/components/Home/Welcome.vue'
-import FollowingList from 'src/components/Home/FollowingList.vue'
-import {useUserIndex} from "src/composables";
+import Welcome from '../../components/Home/Welcome.vue'
+import FollowingList from '../../components/Home/FollowingList.vue'
+import {useUserIndex} from "../../composables";
 const {loginStatus}=useUserIndex()
 
 </script>

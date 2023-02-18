@@ -1,8 +1,8 @@
-import {usePopularCoinStore} from "src/store/popular";
-import {useUserStore} from "src/store/user";
+import {usePopularCoinStore} from "../store/popular";
+import {useUserStore} from "../store/user";
 import {useSearchStore} from "../store/search";
 import {computed} from "vue";
-import {Popular_List,Search_Result,Trending_List} from "src/utils/Types";
+import {Popular_List,Search_Result,Trending_List} from "../utils/Types";
 
 
 export const usePopularIndex=()=>{

@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import {useRouter} from "vue-router";
-import {useSearchIndex} from "src/composables";
+import {useSearchIndex} from "../../composables";
 const {searchFlag,searchResult,searchText,searchStore}=useSearchIndex()
 const router=useRouter()
 const navigateToDetail = (id:string) => {

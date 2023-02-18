@@ -1,8 +1,8 @@
-import {emailRegex,passwordRegex} from "src/utils/Helper";
+import {emailRegex,passwordRegex} from "../utils/Helper";
 import {User_Info} from "../utils/Types";
 import {ref,reactive} from "vue";
 import {useUserIndex} from "./index";
-import {checkEmail} from 'src/utils/Helper'
+import {checkEmail} from '../utils/Helper'
 export const useAuth=()=>{
     const isLogin=ref<boolean>(false)
     const toggleAuthState = () => {

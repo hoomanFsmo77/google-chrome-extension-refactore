@@ -2,7 +2,7 @@ import {ref,onMounted} from "vue";
 import {ofetch} from "ofetch";
 
 export const useDetail=(id:string)=>{
-    const coin_data=ref({})
+    const coin_data=ref<any>({})
     const flag=ref(false)
     onMounted(async ()=>{
         flag.value=false

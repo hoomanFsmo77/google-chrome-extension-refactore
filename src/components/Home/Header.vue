@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import CBtn from 'src/components/CBtn.vue'
+import CBtn from '../../components/CBtn.vue'
 
 </script>
 

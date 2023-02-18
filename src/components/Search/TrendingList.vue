@@ -2,7 +2,7 @@
   <section id="trending-list">
     <div class="flex items-center">
       <h5 class="text-gray-600 mr-0.5">Trending Now </h5>
-      <img src="../../assets/images/fire.svg" width="16" alt="">
+      <img src="/images/fire.svg" width="16" alt="">
     </div>
     <div class="grid grid-cols-2 w-full mt-1 gap-1 relative h-full" >
       <template v-if="trendingFlag">
@@ -25,8 +25,8 @@
 <script setup>
 import {onMounted} from "vue";
 import TrendingCard from "./TrendingCard.vue";
-import {usePopularIndex, useSearchIndex} from "src/composables";
-import PLoader from 'src/components/PLoader.vue'
+import {usePopularIndex, useSearchIndex} from "../../composables";
+import PLoader from '../PLoader.vue'
 const {bitcoinPrice}=usePopularIndex()
 const {trendingFlag,trendingList,searchStore}=useSearchIndex()
 onMounted(()=>{

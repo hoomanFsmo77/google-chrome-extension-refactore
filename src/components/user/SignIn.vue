@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import {useSignIn} from "src/composables/useAuth";
+import {useSignIn} from "../../composables/useAuth";
 import {useUserIndex} from "../../composables";
 const {signInTrigger,user_info}=useSignIn()
 const {signInErrorFlag}=useUserIndex()

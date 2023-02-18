@@ -30,9 +30,9 @@
 </template>
 
 <script setup lang="ts">
-import DetailCard from 'src/components/Search/DetailCard.vue'
-import PLoader from 'src/components/PLoader.vue'
-import {useDetail} from "src/composables/useDetail";
+import DetailCard from '../../components/Search/DetailCard.vue'
+import PLoader from '../../components/PLoader.vue'
+import {useDetail} from "../../composables/useDetail";
 const {id}=defineProps<{id:string}>()
 const {coin_data,flag}=useDetail(id)
 

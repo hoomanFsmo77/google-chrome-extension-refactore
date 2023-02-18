@@ -1,5 +1,5 @@
 import {defineStore} from "pinia";
-import {Search_Store,Search_Result,Trending_List} from "src/utils/Types";
+import {Search_Store,Search_Result,Trending_List} from "../utils/Types";
 import {ofetch} from "ofetch";
 
 export const useSearchStore=defineStore('search',{
