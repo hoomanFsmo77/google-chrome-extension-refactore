@@ -14,7 +14,9 @@
   }
   .btn-indigo{
     @apply bg-indigo-500 text-light hover:shadow-indigo-500
-
+  }
+  .btn-green{
+    @apply bg-green-500 text-light hover:shadow-green-500
   }
   .btn-sm{
     @apply !text-0.9 ;

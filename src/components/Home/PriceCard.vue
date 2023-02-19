@@ -23,26 +23,36 @@
 
       </div>
       <div>
-        <span class="icon-wrapper">
-           <font-awesome-icon class="text-1.1 text-gray-600" icon="fa-solid fa-heart" />
+        <button v-if="hasRing==='no'" @click="userFavHandler(coinId)">
+          <span class="icon-wrapper">
+           <font-awesome-icon class="text-1.1 " :class="userStore.isCoinExist(coinId) ? 'text-green-600' : 'text-gray-600'" icon="fa-solid fa-heart" />
         </span>
+        </button>
+        <button v-else>
+          <span class="icon-wrapper">
+            <font-awesome-icon class="text-1.1 text-gray-600"  icon="fa-solid fa-bell" />
+        </span>
+        </button>
       </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import {useAddFav} from "../../composables/useAddFav";
+import {useUserIndex} from "../../composables";
 interface Props{
   icon:string,
   coinName:string,
   abbName:string,
   price:number,
   hasRing:'no'|'yes',
-  coinId:number|string,
+  coinId:string,
   outTrending?:boolean,
   price_change_percentage_24h:number
 }
-const {coinName,abbName,icon,price,price_change_percentage_24h}=defineProps<Props>()
-
+const {coinName,abbName,icon,price,price_change_percentage_24h,coinId,hasRing}=defineProps<Props>()
+const {userFavHandler}=useAddFav()
+const {userStore}=useUserIndex()
 </script>
 
 <style scoped>

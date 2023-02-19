@@ -26,7 +26,8 @@ export const useUserIndex=()=>{
     const signInErrorFlag=computed<boolean>(()=>userStore.signInErrorFlag)
     const userEmail=computed<string|undefined>(()=>userStore.email)
     const favCoinLength=computed<number>(()=>userStore.getFavCoinLength)
-    return{loginStatus,userStore,signUpFetchFlag,signInErrorFlag,userEmail,favCoinLength}
+    const favCoinList=computed<string[]>(()=>userStore.getFavCoinList)
+    return{loginStatus,userStore,signUpFetchFlag,signInErrorFlag,userEmail,favCoinLength,favCoinList}
 }
 
 export const useSearchIndex=()=>{

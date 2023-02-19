@@ -120,9 +120,17 @@
         </div>
       </div>
       <div class="flex justify-center">
-        <button class="btn btn-dark mt-0.5 btn-sm !px-0.7 !rounded-full">
-          Follow
-          <font-awesome-icon class="text-0.9 text-light ml-0.3" icon="fa-solid fa-heart" />
+        <button @click="userFavHandler(props.coinId)" :class="userStore.isCoinExist(props.coinId) ? 'btn-green' : 'btn-dark'" class="btn  mt-0.5 btn-sm !px-0.7 !rounded-full">
+
+          <template  v-if="userStore.isCoinExist(props.coinId)">
+            Following
+            <font-awesome-icon class="text-0.9 text-light ml-0.3" icon="fa-solid fa-check" />
+          </template>
+          <template v-else>
+            Follow
+            <font-awesome-icon  class="text-0.9 text-light ml-0.3" icon="fa-solid fa-heart" />
+          </template>
+
         </button>
       </div>
     </div>
@@ -130,6 +138,9 @@
 </template>
 
 <script setup lang="ts">
+import {useAddFav} from "../../composables/useAddFav";
+import {useUserIndex} from "../../composables";
+
 export interface Props {
   img:string|number,
   symbol:string|number,
@@ -148,11 +159,12 @@ export interface Props {
   p24:string|number,
   blockLink:string|number,
   homeLink:string|number,
-  coinId:string|number,
+  coinId:string,
   name:string
 }
 const props=defineProps<Props>()
-
+const {userFavHandler}=useAddFav()
+const {userStore}=useUserIndex()
 </script>
 
 <style scoped>

@@ -16,9 +16,15 @@
         </p>
       </div>
       <div class="text-center">
-        <button class="btn btn-dark mt-0.5 btn-sm !px-0.7 !rounded-full">
-          Follow
-          <font-awesome-icon class="text-0.9 text-light ml-0.3" icon="fa-solid fa-heart" />
+        <button @click="userFavHandler(id)" :class="userStore.isCoinExist(id) ? 'btn-green' : 'btn-dark'" class="btn  mt-0.5 btn-sm !px-0.7 !rounded-full">
+          <template  v-if="userStore.isCoinExist(id)">
+            Following
+            <font-awesome-icon class="text-0.9 text-light ml-0.3" icon="fa-solid fa-check" />
+          </template>
+          <template v-else>
+            Follow
+            <font-awesome-icon  class="text-0.9 text-light ml-0.3" icon="fa-solid fa-heart" />
+          </template>
         </button>
       </div>
     </div>
@@ -26,15 +32,19 @@
 </template>
 
 <script setup lang="ts">
+import {useAddFav} from "../../composables/useAddFav";
+import {useUserIndex} from "../../composables";
 interface Props{
   icon:string
   coinName:string,
   symbol:string,
   price:number,
   rank:number,
-  id:number|string
+  id:string
 }
 const {icon,coinName,symbol,price,rank,id}=defineProps<Props>()
+const {userFavHandler}=useAddFav()
+const {userStore}=useUserIndex()
 </script>
 
 <style scoped>
