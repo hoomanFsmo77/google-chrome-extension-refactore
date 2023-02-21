@@ -1,0 +1,15 @@
+@tailwind components;
+@layer components {
+  .modal{
+    @apply w-[91%]  m-1 fixed bg-light top-0  rounded-6 overflow-hidden
+  }
+  .overlay{
+    @apply w-full h-full fixed top-0 left-0 bg-[rgba(0,0,0,0.1)]
+  }
+  .modal-header{
+    @apply p-0.7 border-b-[1px] border-b-gray-200 flex justify-between items-center
+  }
+  .modal-body{
+    @apply p-0.5
+  }
+}

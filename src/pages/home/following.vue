@@ -1,5 +1,5 @@
 <template>
-  <section id="following">
+  <section id="following" class="overflow-y-auto p-0.5 h-[300px]">
     <FollowingList v-if="loginStatus"/>
     <Welcome v-else/>
   </section>

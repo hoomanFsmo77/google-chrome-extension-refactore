@@ -135,11 +135,21 @@
       </div>
     </div>
   </div>
+  <VModal @close="closeModal" :is-shown="modalFlag">
+    <p class="h6 text-center mb-0.5">Please sign in/sign up to continue</p>
+    <div class="mb-0.5 flex justify-center">
+      <router-link class="btn btn-primary" :to="{name:'index-user'}" @click="closeModal">
+        Continue
+      </router-link>
+    </div>
+  </VModal>
+
 </template>
 
 <script setup lang="ts">
 import {useAddFav} from "../../composables/useAddFav";
 import {useUserIndex} from "../../composables";
+import VModal from '../../components/VModal.vue'
 
 export interface Props {
   img:string|number,
@@ -163,7 +173,7 @@ export interface Props {
   name:string
 }
 const props=defineProps<Props>()
-const {userFavHandler}=useAddFav()
+const {userFavHandler,modalFlag,closeModal}=useAddFav()
 const {userStore}=useUserIndex()
 </script>
 

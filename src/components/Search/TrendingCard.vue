@@ -29,9 +29,18 @@
       </div>
     </div>
   </div>
+  <VModal @close="closeModal" :is-shown="modalFlag">
+    <p class="h6 text-center mb-0.5">Please sign in/sign up to continue</p>
+    <div class="mb-0.5 flex justify-center">
+      <router-link class="btn btn-primary" :to="{name:'index-user'}" @click="closeModal">
+        Continue
+      </router-link>
+    </div>
+  </VModal>
 </template>
 
 <script setup lang="ts">
+import VModal from '../../components/VModal.vue'
 import {useAddFav} from "../../composables/useAddFav";
 import {useUserIndex} from "../../composables";
 interface Props{
@@ -43,7 +52,7 @@ interface Props{
   id:string
 }
 const {icon,coinName,symbol,price,rank,id}=defineProps<Props>()
-const {userFavHandler}=useAddFav()
+const {userFavHandler,modalFlag,closeModal}=useAddFav()
 const {userStore}=useUserIndex()
 </script>
 

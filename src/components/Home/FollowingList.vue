@@ -1,16 +1,17 @@
 <template>
-  <section v-if="favCoinLength>0" id="has-fav-list" class="flex justify-center items-center flex-col p-1">
-    <template v-if="activePreloader">
+  <section v-if="favCoinLength>0" id="has-fav-list" :class="{'h-[200px]':activePreloader}" class="flex justify-center relative items-center flex-col p-1">
+    <PLoader v-if="activePreloader"/>
+    <template v-else>
       <PriceCard
           v-for="(coin,index) in coinInfoContainer"
           :key="index"
           has-ring="yes"
-          :icon="coin.image.small"
+          :icon="coin.image"
           :coin-id="coin.id"
           :coin-name="coin.name"
           :abb-name="coin.symbol"
-          :price="coin.market_data.current_price.usd"
-          :price_change_percentage_24h="coin.market_data.price_change_percentage_24h"
+          :price="coin.current_price"
+          :price_change_percentage_24h="coin.price_change_percentage_24h"
       />
     </template>
   </section>
@@ -21,6 +22,7 @@
 </template>
 
 <script setup lang="ts">
+import PLoader from '../../components/PLoader.vue'
 import PriceCard from '../Home/PriceCard.vue'
 import {useUserIndex} from "../../composables";
 import {useFollowing} from "../../composables/useFollowing";

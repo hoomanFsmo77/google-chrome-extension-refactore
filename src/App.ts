@@ -3,6 +3,9 @@ import './assets/styles/Tailwind.config/Tailwind.base.scss'
 import './assets/styles/Tailwind.config/Tailwind.component.scss'
 import './assets/styles/Tailwind.config/Tailwind.utilities.scss'
 
+////// v-fade
+import VFade from "./plugins/vFade";
+
 /////// auto login
 import auth from "./plugins/auth";
 
@@ -33,4 +36,5 @@ app.component('font-awesome-icon', FontAwesomeIcon)
 app.use(createPinia())
 app.use(router)
 app.use(auth)
+app.directive('fade',VFade)
 app.mount('#app')
