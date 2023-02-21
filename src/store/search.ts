@@ -25,6 +25,13 @@ export const useSearchStore=defineStore('search',{
         getTrendingFlag(state){
             return state.trendingFlag
         },
+        getTrendingIds(state):string[]{
+            let result:any=[]
+            state.trendingList.forEach(coin=>{
+                result.push(coin.item.id)
+            })
+            return result
+        }
     },
     actions:{
         async triggerSearch(value:string){

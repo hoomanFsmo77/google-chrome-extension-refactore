@@ -35,11 +35,11 @@ export const useSearchIndex=()=>{
     const searchResult=computed<Search_Result[]>(()=>searchStore.searchResult)
     const searchFlag=computed<boolean>(()=>searchStore.getSearchFlag)
     const searchText=computed<string>(()=>searchStore.searchText)
-
     const trendingList=computed<Trending_List[]>(()=>searchStore.getTrendingList)
     const trendingFlag=computed(()=>searchStore.getTrendingFlag)
+    const trendingIds=computed<string[]>(()=>searchStore.getTrendingIds)
 
     return{
-        searchStore,searchResult, searchFlag,searchText,trendingList,trendingFlag
+        searchStore,searchResult, searchFlag,searchText,trendingList,trendingFlag,trendingIds
     }
 }

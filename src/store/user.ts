@@ -97,6 +97,11 @@ export const useUserStore=defineStore('user',{
             }
             storeData(this.favCoins,process.env.FAV_LIST as  string)
             updateUserFav(this.favCoins)
+        },
+        removeCoinFromFavList(id:string){
+            this.favCoins.splice(this.favCoins.indexOf(id),1)
+            storeData(this.favCoins,process.env.FAV_LIST as  string)
+            updateUserFav(this.favCoins)
         }
     }
 

@@ -12,6 +12,7 @@
           :abb-name="coin.symbol"
           :price="coin.current_price"
           :price_change_percentage_24h="coin.price_change_percentage_24h"
+          :outTrending="checkOutTrending(coin.id)"
       />
     </template>
   </section>
@@ -26,8 +27,17 @@ import PLoader from '../../components/PLoader.vue'
 import PriceCard from '../Home/PriceCard.vue'
 import {useUserIndex} from "../../composables";
 import {useFollowing} from "../../composables/useFollowing";
+import {useSearchIndex} from "../../composables";
+import {favCoins} from "../../utils/Helper";
 const {favCoinLength}=useUserIndex()
 const {coinInfoContainer,activePreloader}=useFollowing()
+const {trendingList,trendingIds}=useSearchIndex()
+const checkOutTrending = (id:string) => {
+  if(trendingList.value.length>0){
+    return !trendingIds.value.includes(id) && !favCoins.includes(id)
+  }
+}
+
 </script>
 
 <style scoped>
