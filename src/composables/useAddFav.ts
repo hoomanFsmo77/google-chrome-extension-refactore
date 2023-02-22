@@ -2,6 +2,7 @@ import {useUserIndex} from "./index";
 import {ref} from "vue";
 
 export const useAddFav=()=>{
+    const show=ref(true)
     const {userStore}=useUserIndex()
     const modalFlag=ref<boolean>(false)
     const userFavHandler = (id:string) => {
@@ -16,7 +17,12 @@ export const useAddFav=()=>{
       modalFlag.value=false
     }
 
+    const removeCoin = (id:string) => {
+        userStore.removeCoinFromFavList(id)
+        show.value=false
+    }
+
     return{
-        userFavHandler,modalFlag,closeModal
+        userFavHandler,modalFlag,closeModal,removeCoin,show
     }
 }

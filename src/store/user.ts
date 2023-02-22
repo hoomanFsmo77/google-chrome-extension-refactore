@@ -1,17 +1,27 @@
 import {defineStore} from "pinia";
 import {User_Store,User_Info} from "../utils/Types";
 import {ofetch} from "ofetch";
-import {loginValidation, setCookie,extractUser,updateUserFav} from "../utils/Helper";
-import {deleteCookie,extractToken,storeData} from "../utils/Helper";
+import {createNotification,removeNotification,removeAllAlerts,backgroundInit} from "../background";
+import {
+    loginValidation,
+    setCookie,
+    extractUser,
+    updateUserFav,
+    deleteCookie,
+    storeData,
+    updateUserAlert
+} from "../utils/Helper";
 
 export const useUserStore=defineStore('user',{
     state:():User_Store=>{
         return {
             loginStatus:false,
             favCoins:[],
+            alertCoins:[],
             signUpFetchFlag:false,
             signInErrorFlag:false,
-            email:undefined
+            email:undefined,
+            interval:1
         }
     },
     getters:{
@@ -26,6 +36,12 @@ export const useUserStore=defineStore('user',{
         },
         getFavCoinList(state){
             return state.favCoins
+        },
+        isAlertSet:(state)=>(id:string)=>{
+            return state.alertCoins.includes(id)
+        },
+        getInterval(state){
+            return state.interval
         }
 
     },
@@ -42,7 +58,6 @@ export const useUserStore=defineStore('user',{
                 })
                 this.email=user_info.email
                 this.loginStatus=true
-                console.log(data.name)
                 setCookie(10,data.name)
             }catch (err) {
                 this.loginStatus=false
@@ -62,7 +77,10 @@ export const useUserStore=defineStore('user',{
                     this.email=user_info.email
                     this.loginStatus=true
                     this.favCoins=userFetchedData?.fav?.fav ?? []
-                    storeData(this.favCoins,process.env.FAV_LIST as  string)
+                    this.alertCoins=userFetchedData?.alert?.alert ?? []
+                    this.alertCoins.forEach(coin=>createNotification(coin))
+                    storeData<string>(this.favCoins,process.env.FAV_LIST as  string)
+                    storeData<string>(this.favCoins,process.env.ALERT_LIST as  string)
                     setCookie(10,targetUser[0])
                 }
             }catch (e) {
@@ -76,7 +94,10 @@ export const useUserStore=defineStore('user',{
             this.email=undefined
             this.loginStatus=false
             this.favCoins=[]
-            storeData([],process.env.FAV_LIST as  string)
+            this.alertCoins=[]
+            storeData<string>([],process.env.FAV_LIST as  string)
+            storeData<string>([],process.env.ALERT_LIST as  string)
+            removeAllAlerts()
         },
         async triggerAutoLogin(token:string){
             try {
@@ -84,7 +105,10 @@ export const useUserStore=defineStore('user',{
                 this.email=data.email
                 this.loginStatus=true
                 this.favCoins=data?.fav?.fav ?? []
-                storeData(this.favCoins,process.env.FAV_LIST as  string)
+                this.alertCoins=data?.alert?.alert ?? []
+                storeData<string>(this.favCoins,process.env.FAV_LIST as  string)
+                storeData<string>(this.alertCoins,process.env.ALERT_LIST as  string)
+                backgroundInit()
             } catch (e) {
                 this.resetUser()
             }
@@ -92,16 +116,43 @@ export const useUserStore=defineStore('user',{
         favHandler(id:string){
             if(this.isCoinExist(id)){
                 this.favCoins.splice(this.favCoins.indexOf(id),1)
+                if(this.isAlertSet(id)){
+                    this.alertCoins.splice(this.alertCoins.indexOf(id),1)
+                    removeNotification(id)
+                    storeData<string>(this.alertCoins,process.env.ALERT_LIST as  string)
+                    updateUserAlert(this.alertCoins)
+                }
+
             }else{
                 this.favCoins.push(id)
             }
-            storeData(this.favCoins,process.env.FAV_LIST as  string)
+            storeData<string>(this.favCoins,process.env.FAV_LIST as  string)
             updateUserFav(this.favCoins)
+
         },
         removeCoinFromFavList(id:string){
             this.favCoins.splice(this.favCoins.indexOf(id),1)
-            storeData(this.favCoins,process.env.FAV_LIST as  string)
+            storeData<string>(this.favCoins,process.env.FAV_LIST as  string)
             updateUserFav(this.favCoins)
+            if(this.isAlertSet(id)){
+                this.alertCoins.splice(this.alertCoins.indexOf(id),1)
+                removeNotification(id)
+                updateUserAlert(this.alertCoins)
+                storeData<string>(this.alertCoins,process.env.ALERT_LIST as  string)
+            }
+        },
+        alertHandler(id:string,modalInfo:{trigger:boolean,msg:string}){
+            if(this.isAlertSet(id)){
+                this.alertCoins.splice(this.alertCoins.indexOf(id),1)
+                modalInfo.msg='Alert removed!'
+                removeNotification(id)
+            }else{
+                this.alertCoins.push(id)
+                modalInfo.msg=`Alert created!<br/>We will notify you every ${this.getInterval} minutes.`
+                createNotification(id)
+            }
+            storeData<string>(this.alertCoins,process.env.ALERT_LIST as  string)
+            updateUserAlert(this.alertCoins)
         }
     }
 

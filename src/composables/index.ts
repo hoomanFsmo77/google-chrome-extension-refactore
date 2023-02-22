@@ -27,7 +27,9 @@ export const useUserIndex=()=>{
     const userEmail=computed<string|undefined>(()=>userStore.email)
     const favCoinLength=computed<number>(()=>userStore.getFavCoinLength)
     const favCoinList=computed<string[]>(()=>userStore.getFavCoinList)
-    return{loginStatus,userStore,signUpFetchFlag,signInErrorFlag,userEmail,favCoinLength,favCoinList}
+    const userInterval=computed<number>(()=>userStore.getInterval)
+
+    return{loginStatus,userStore,signUpFetchFlag,signInErrorFlag,userEmail,favCoinLength,favCoinList,userInterval}
 }
 
 export const useSearchIndex=()=>{
@@ -38,7 +40,6 @@ export const useSearchIndex=()=>{
     const trendingList=computed<Trending_List[]>(()=>searchStore.getTrendingList)
     const trendingFlag=computed(()=>searchStore.getTrendingFlag)
     const trendingIds=computed<string[]>(()=>searchStore.getTrendingIds)
-
     return{
         searchStore,searchResult, searchFlag,searchText,trendingList,trendingFlag,trendingIds
     }

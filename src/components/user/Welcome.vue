@@ -13,18 +13,25 @@
     </div>
     <div class="flex items-center">
       <p class="mr-0.5 text-1 text-center">Set interval for alert: <br> (in minutes)</p>
-      <input value="1" class="input !w-[40%]" type="number">
+      <input v-model="inputInterval" @input="changeInterval"  :min="1" class="input !w-[40%]" type="number">
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import {ref} from "vue";
 import {useUserIndex} from "../../composables";
 const {userStore}=useUserIndex()
+const inputInterval=ref<string>('1')
 const logoutHandler = () => {
   userStore.resetUser()
 }
 
+const changeInterval = () => {
+  userStore.$patch({
+    interval:Number(inputInterval.value)
+  })
+}
 
 
 

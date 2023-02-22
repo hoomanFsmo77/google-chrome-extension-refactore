@@ -48,7 +48,7 @@ export const deleteCookie=(day:number)=>{
     document.cookie=`x_token=;path=/;expires=${date}`
 }
 
-export const storeData=(data:string[],name:string)=>{
+export const storeData=<T>(data:T[],name:string)=>{
     localStorage.setItem(name,JSON.stringify(data))
 }
 
@@ -71,5 +71,19 @@ export const updateUserFav = async (favArray:string[]):Promise<void> => {
         console.log('successful add fav coin fetch')
     }catch (e) {
         console.log('unsuccessful add fav coin fetch')
+    }
+}
+
+export const updateUserAlert = async (alertArray:string[]):Promise<void> => {
+    try {
+        const data=await ofetch(`https://extension-cdfdf-default-rtdb.firebaseio.com/users/${extractToken()}/alert.json`,{
+            method:'PUT',
+            body:JSON.stringify({
+                alert:alertArray
+            })
+        })
+        console.log('successful add alert coin fetch')
+    }catch (e) {
+        console.log('unsuccessful add alert coin fetch')
     }
 }

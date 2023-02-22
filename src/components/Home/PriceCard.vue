@@ -33,9 +33,9 @@
            <font-awesome-icon class="text-1.1 " :class="userStore.isCoinExist(coinId) ? 'text-green-600' : 'text-gray-600'" icon="fa-solid fa-heart" />
         </span>
           </button>
-          <button v-else>
+          <button @click="setAlert(coinId)" v-else>
           <span class="icon-wrapper">
-            <font-awesome-icon class="text-1.1 text-gray-600"  icon="fa-solid fa-bell" />
+            <font-awesome-icon :class="userStore.isAlertSet(coinId) ? 'text-red-600' : 'text-gray-600'" class="text-1.1 "  icon="fa-solid fa-bell" />
         </span>
           </button>
         </div>
@@ -50,13 +50,22 @@
       </router-link>
     </div>
   </VModal>
+  <VModal @close="closeAlertModal" :is-shown="alertModalInfo.trigger">
+    <p class="h6 text-center mb-0.5" v-html="alertModalInfo.msg"></p>
+    <div class="mb-0.5 flex justify-center">
+      <button class="btn btn-primary"  @click="closeAlertModal">
+        Close
+      </button>
+    </div>
+  </VModal>
 </template>
 
 <script setup lang="ts">
 import VModal from '../../components/VModal.vue'
 import {useAddFav} from "../../composables/useAddFav";
 import {useUserIndex} from "../../composables";
-import {ref} from "vue";
+import {useSetAlert} from "../../composables/useSetAlert";
+
 interface Props{
   icon:string,
   coinName:string,
@@ -67,14 +76,10 @@ interface Props{
   outTrending?:boolean,
   price_change_percentage_24h:number
 }
-const show=ref(true)
 const {coinName,abbName,icon,price,price_change_percentage_24h,coinId,hasRing,outTrending}=defineProps<Props>()
-const {userFavHandler,modalFlag,closeModal}=useAddFav()
+const {userFavHandler,modalFlag,closeModal,removeCoin,show}=useAddFav()
 const {userStore}=useUserIndex()
-const removeCoin = (id:string) => {
-  userStore.removeCoinFromFavList(id)
-  show.value=false
-}
+const {setAlert,alertModalInfo,closeAlertModal}=useSetAlert()
 </script>
 
 <style scoped>
